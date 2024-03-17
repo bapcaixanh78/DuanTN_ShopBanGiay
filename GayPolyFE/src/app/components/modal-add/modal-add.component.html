@@ -1,0 +1,75 @@
+<div class="add-dashboard">
+  <div class="escape-icon">
+    <a  class="close-popup" (click)="closePopup()">&times;</a>
+  </div>
+  <div class="heading-add blue-color">THÊM MỚI SẢN PHẨM</div>
+  <form [formGroup]="addForm" (ngSubmit)="onAdd()">
+    <div class="fm">
+      <div class="fm-name blue-color">
+        Tên sản phẩm<span class="fm-name-redstar"> *</span>
+      </div>
+      <div class="fm-input">
+        <input type="text" name="" id="name"  formControlName="Name" required />
+      </div>
+    </div>
+    <div class="fm">
+      <div class="fm-name blue-color">
+        Số lượng<span class="fm-name-redstar"> *</span>
+      </div>
+      <div class="fm-input">
+        <input min="0" type="number" name="" id="number"  formControlName="Quantity"
+          pattern="[0-999]" required />
+      </div>
+    </div>
+    <div class="fm">
+      <div class="fm-name blue-color">Giá Sản Phẩm <span class="fm-name-redstar"> *</span></div>
+      <div class="fm-input">
+        <input style="resize: none" min="0" type="number" name="" id="number"  pattern="[0-999]" maxlength="4000" formControlName="Price">
+      </div>
+    </div>
+    <div class="fm">
+      <div class="fm-name blue-color">
+       Loại Giày<span class="fm-name-redstar"> *</span>
+      </div>
+      <div class="fm-input">
+        <select name="fm-company" id="fm-company" formControlName="Type">
+          <!-- <option *ngFor="let brand of brands" [value]="brand.id">
+            {{ brand.name }}
+          </option> -->
+          <option value="giay1">Giày Thể Thao</option>
+          <option value="giay2">Giày Thời Trang</option>
+        </select>
+      </div>
+    </div>
+    <div class="fm">
+      <div class="fm-name blue-color">Sale <span class="fm-name-redstar"> *</span></div>
+      <div class="fm-input">
+        <input style="resize: none" type="number" min="0"  id="number" maxlength="4000" formControlName="Sale">
+      </div>
+    </div>
+    <div class="fm">
+      <div class="fm-name blue-color">
+        Mã Voucher (nếu có)<span class="fm-name-redstar"> *</span>
+      </div>
+      <div class="fm-input">
+        <input type="text" name=""   formControlName="VoucherCode" required />
+      </div>
+    </div>
+    <div class="fm">
+      <div class="fm-name blue-color">Mô Tả <span class="fm-name-redstar"> *</span></div>
+      <div class="fm-input">
+        <textarea style="resize: none" type="number" name="" id="number" maxlength="4000" formControlName="Description"></textarea>
+      </div>
+    </div>
+    <div class="fm">
+      <div class="fm-name blue-color">Hình Ảnh<span class="fm-name-redstar"> *</span></div>
+      <div class="fm-input">
+        <input type="file" (change)="getImgValue($event)">
+      </div>
+    </div>
+    <div class="btn">
+      <button class="btn-detele" (click)="closePopup()">HUỶ</button>
+      <button type="submit" value="add" class="btn-add">THÊM MỚI</button>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,8 @@
+túi1
+assets/image-item/Screenshot 2022-05-24 142811.png
+túi2
+assets/image-item/Screenshot 2022-05-24 142845.png
+túi 3
+assets/image-item/Screenshot 2022-05-24 142902.png
+túi 4
+assets/image-item/Screenshot 2022-05-24 142917.png

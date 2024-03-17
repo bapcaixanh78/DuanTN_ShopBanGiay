@@ -1,0 +1,56 @@
+.popup-user {
+    display: block;
+  }
+  .price{
+    background-color: black;
+    color: white;
+  }
+  .sumprice{
+    width: 25px;
+  }
+  .pricesum{
+    border-top: 1px dashed #5c636a;
+    width: 100%;
+  }
+  #sumprice2{
+    width: 40%;
+    margin-left: 60%;
+  }
+  .btn-hn{
+    background-color: black;
+    color: white;
+    border-radius: 0px;
+    
+  }
+  .btn-danger {
+    border-radius: 0px;
+  }
+  .amountproduct{
+    width: 20px;
+    background-color: white;
+    display: inline-block;
+    text-align: center;
+    border: 1px solid #444;
+    padding: 2px;
+  }
+  .soluongsanpham{
+    width:28px;
+    height: 28px;
+    border-radius: 20px;
+    background-color: rgb(197, 42, 42);
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .soluongsanpham>p{
+    margin: 0px;
+    font-weight: 500;
+    color: white;
+  }
+  .boder-red >img{
+    border:red 1px solid;
+  }
+  .product-img{
+    position: relative;
+  }

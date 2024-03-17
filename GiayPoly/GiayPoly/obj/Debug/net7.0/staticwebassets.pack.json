@@ -1,0 +1,89 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\VNT\\Desktop\\Web giay\\GiayPoly\\GiayPoly\\wwwroot\\Media\\product\\202403170329171717.png",
+      "PackagePath": "staticwebassets\\Media\\product\\202403170329171717.png"
+    },
+    {
+      "Id": "C:\\Users\\VNT\\Desktop\\Web giay\\GiayPoly\\GiayPoly\\wwwroot\\Media\\product\\202403170330252525.png",
+      "PackagePath": "staticwebassets\\Media\\product\\202403170330252525.png"
+    },
+    {
+      "Id": "C:\\Users\\VNT\\Desktop\\Web giay\\GiayPoly\\GiayPoly\\wwwroot\\Media\\product\\202403170331404040.png",
+      "PackagePath": "staticwebassets\\Media\\product\\202403170331404040.png"
+    },
+    {
+      "Id": "C:\\Users\\VNT\\Desktop\\Web giay\\GiayPoly\\GiayPoly\\wwwroot\\Media\\product\\202403170335323232.png",
+      "PackagePath": "staticwebassets\\Media\\product\\202403170335323232.png"
+    },
+    {
+      "Id": "C:\\Users\\VNT\\Desktop\\Web giay\\GiayPoly\\GiayPoly\\wwwroot\\Media\\product\\20240317033704044.png",
+      "PackagePath": "staticwebassets\\Media\\product\\20240317033704044.png"
+    },
+    {
+      "Id": "C:\\Users\\VNT\\Desktop\\Web giay\\GiayPoly\\GiayPoly\\wwwroot\\Media\\product\\202403170337161616.png",
+      "PackagePath": "staticwebassets\\Media\\product\\202403170337161616.png"
+    },
+    {
+      "Id": "C:\\Users\\VNT\\Desktop\\Web giay\\GiayPoly\\GiayPoly\\wwwroot\\Media\\product\\202403170338393939.png",
+      "PackagePath": "staticwebassets\\Media\\product\\202403170338393939.png"
+    },
+    {
+      "Id": "C:\\Users\\VNT\\Desktop\\Web giay\\GiayPoly\\GiayPoly\\wwwroot\\Media\\product\\202403170340101010.png",
+      "PackagePath": "staticwebassets\\Media\\product\\202403170340101010.png"
+    },
+    {
+      "Id": "C:\\Users\\VNT\\Desktop\\Web giay\\GiayPoly\\GiayPoly\\wwwroot\\Media\\product\\202403170340414141.png",
+      "PackagePath": "staticwebassets\\Media\\product\\202403170340414141.png"
+    },
+    {
+      "Id": "C:\\Users\\VNT\\Desktop\\Web giay\\GiayPoly\\GiayPoly\\wwwroot\\Media\\product\\202403170343282828.png",
+      "PackagePath": "staticwebassets\\Media\\product\\202403170343282828.png"
+    },
+    {
+      "Id": "C:\\Users\\VNT\\Desktop\\Web giay\\GiayPoly\\GiayPoly\\wwwroot\\Media\\product\\202403170346131313.png",
+      "PackagePath": "staticwebassets\\Media\\product\\202403170346131313.png"
+    },
+    {
+      "Id": "C:\\Users\\VNT\\Desktop\\Web giay\\GiayPoly\\GiayPoly\\wwwroot\\Media\\product\\202403170806222222.png",
+      "PackagePath": "staticwebassets\\Media\\product\\202403170806222222.png"
+    },
+    {
+      "Id": "C:\\Users\\VNT\\Desktop\\Web giay\\GiayPoly\\GiayPoly\\wwwroot\\Media\\product\\202403170938343434.png",
+      "PackagePath": "staticwebassets\\Media\\product\\202403170938343434.png"
+    },
+    {
+      "Id": "C:\\Users\\VNT\\Desktop\\Web giay\\GiayPoly\\GiayPoly\\wwwroot\\Media\\product\\202403171103464646.png",
+      "PackagePath": "staticwebassets\\Media\\product\\202403171103464646.png"
+    },
+    {
+      "Id": "C:\\Users\\VNT\\Desktop\\Web giay\\GiayPoly\\GiayPoly\\wwwroot\\Media\\product\\202403171144323232.png",
+      "PackagePath": "staticwebassets\\Media\\product\\202403171144323232.png"
+    },
+    {
+      "Id": "C:\\Users\\VNT\\Desktop\\Web giay\\GiayPoly\\GiayPoly\\wwwroot\\Media\\product\\202403171229292929.png",
+      "PackagePath": "staticwebassets\\Media\\product\\202403171229292929.png"
+    },
+    {
+      "Id": "C:\\Users\\VNT\\Desktop\\Web giay\\GiayPoly\\GiayPoly\\wwwroot\\noimg.png",
+      "PackagePath": "staticwebassets\\noimg.png"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.GiayPoly.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.build.GiayPoly.props",
+      "PackagePath": "build\\GiayPoly.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildMultiTargeting.GiayPoly.props",
+      "PackagePath": "buildMultiTargeting\\GiayPoly.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildTransitive.GiayPoly.props",
+      "PackagePath": "buildTransitive\\GiayPoly.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

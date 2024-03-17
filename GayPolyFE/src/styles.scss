@@ -1,0 +1,682 @@
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use '@angular/material' as mat;
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$inventory-management-primary: mat.define-palette(mat.$indigo-palette);
+$inventory-management-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$inventory-management-warn: mat.define-palette(mat.$red-palette);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$inventory-management-theme: mat.define-light-theme((
+  color: (
+    primary: $inventory-management-primary,
+    accent: $inventory-management-accent,
+    warn: $inventory-management-warn,
+  )
+));
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($inventory-management-theme);
+
+/* You can add global styles to this file, and also import other style files */
+
+@import './assets/scss/index.scss';
+html{
+    font-family: 'Roboto', sans-serif;
+  }
+// regular style toast
+@import '~ngx-toastr/toastr';
+
+// // bootstrap style toast
+// // or import a bootstrap 4 alert styled design (SASS ONLY)
+// // should be after your bootstrap imports, it uses bs4 variables, mixins, functions
+// @import 'ngx-toastr/toastr-bs4-alert';
+
+// // if you'd like to use it without importing all of bootstrap it requires
+// @import 'bootstrap/scss/functions';
+// @import 'bootstrap/scss/variables';
+// @import 'bootstrap/scss/mixins';
+// @import 'ngx-toastr/toastr-bs4-alert';
+
+
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+/* navbarcss */
+
+.header {
+  width: 100%;
+  box-sizing: border-box;
+}
+.header > p {
+  position: absolute;
+  top: 10px;
+}
+.header-navbar {
+  width: 100%;
+  height: 80px;
+  position: fixed;
+  justify-content: center;
+  display: flex;
+  box-sizing: border-box;
+  border-bottom: 1px solid black;
+  background-color: white;
+  border-radius: 0px 0px 15px 15px;
+  z-index: 2;
+  animation: navbarfly 2s forwards;
+  opacity: 0;
+}
+* {
+  margin: 0px;
+}
+.header-list > li {
+  display: inline-block;
+  margin: 15px;
+  padding: 15px;
+  text-align: center;
+}
+#seach-input {
+  height: 25px;
+  width: 185px;
+  margin-top: 15px;
+  border-radius: 10px;
+  border-width: 1px;
+}
+.seach {
+  position: absolute;
+  margin-top: 14px;
+  left: 81%;
+}
+.seach > a {
+  margin-left: 10px;
+  transition: transform linear 0.2s;
+}
+.seach > a > img:hover {
+  transform: scale(1.3);
+}
+.header-navbar > a {
+  position: absolute;
+  left: 10%;
+  text-decoration: none;
+  font-size: 30px;
+  font-weight: 700;
+  color: black;
+  margin-top: 28px;
+}
+.header-list--item > a {
+  text-decoration: none;
+  font-size: 20px;
+  color: black;
+}
+.header-list--item > a:hover {
+  border-bottom: 4px solid black;
+  padding-bottom: 26px;
+}
+/* <----dinhdangthanhscroll----> */
+html::-webkit-scrollbar {
+  width: 10px;
+}
+html::-webkit-scrollbar-thumb {
+  background-color: black;
+  width: 10px;
+  border-radius: 10px;
+}
+html {
+  scroll-behavior: smooth;
+}
+html {
+  scroll-behavior: smooth;
+}
+/* <----dinhdangthanhscroll----> */
+@keyframes navbarfly {
+  from {
+    top: -100px;
+    opacity: 0;
+  }
+  to {
+    top: 0px;
+    opacity: 1;
+  }
+}
+/* navbarcss */
+/* footercss */
+.container-contact {
+  width: 100%;
+  height: 500px;
+  box-sizing: border-box;
+  display: inline-block;
+  margin-top: 100px;
+}
+.contact-phone {
+  width: 645px;
+  height: 90px;
+  border-radius: 45px;
+  border: 1px solid black;
+}
+.container-contact-phone {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.contact-phone2 {
+  width: 645px;
+  height: 90px;
+  border-radius: 45px;
+  border: 1px solid black;
+}
+.phone > p {
+  float: left;
+  margin-top: 35px;
+  font-size: 25px;
+}
+.phone {
+  margin-left: 90px;
+  display: block;
+  box-sizing: border-box;
+}
+.contact-lienhe {
+  width: 15%;
+  height: 150px;
+  margin-top: 30px;
+  margin-bottom: 300px;
+  border: 1px solid black;
+  border-radius: 15px;
+  margin: 25px;
+  text-align: center;
+}
+.contact-lienhe > a {
+  display: block;
+  margin-top: 20px;
+  text-decoration: none;
+  color: black;
+  font-size: 20px;
+}
+.container-contact-lienhe {
+  margin-top: 50px;
+  width: 100%;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+}
+.container-lienhe {
+  width: 100%;
+  height: 314px;
+  background-color: black;
+  text-align: left;
+}
+.container-lienhe > p {
+  font-size: 50px;
+  color: white;
+  position: absolute;
+  left: 178px;
+  margin-top: 8px;
+}
+.container-lienhe > img {
+  position: absolute;
+  left: 490px;
+}
+.logodangky > img {
+  left: 80%;
+  position: absolute;
+  margin-top: 8px;
+}
+.hiden > {
+  width: 50px;
+  height: 50px;
+  left: 60%;
+  top: 3%;
+  position: absolute;
+}
+/* ------------------------------------------------------------------------------------- footercss --------------------------------------------------------------------------- */
+/* homepage */
+.header-intro {
+  width: 100%;
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+.header-intro--color {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.3);
+  display: block;
+}
+* {
+  margin: 0%;
+}
+.header-intro-ani {
+  width: 100%;
+  height: 150px;
+  justify-content: center;
+  display: flex;
+  position: absolute;
+  top: 30%;
+  flex-direction: column;
+  text-align: center;
+}
+.header-intro-ani > h1 {
+  font-size: 80px;
+  color: white;
+  text-shadow: 3px 3px rgba(41, 29, 29);
+  animation: textfly 3s forwards;
+  opacity: 0;
+}
+.header-intro-ani > a {
+  text-decoration: none;
+}
+.header-button {
+  position: absolute;
+  border: 2px solid black;
+  left: 46%;
+  top: 120%;
+  border-radius: 5px;
+  font-size: 20px;
+  color: white;
+  padding: 10px;
+  background: rgb(0, 0, 0, 25);
+  animation: textfly2 3s forwards;
+  animation-delay: 1s;
+  opacity: 0;
+}
+.header-button:hover {
+  color: black;
+  background-color: aliceblue;
+}
+@keyframes textfly {
+  from {
+    margin-bottom: 100px;
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes textfly2 {
+  from {
+    margin-top: 85px;
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.header-text2 {
+  border-bottom: 3px solid black;
+  position: absolute;
+  width: 400px;
+  top: 82%;
+  left: 39%;
+  opacity: 0;
+  animation: textfly3 3s forwards;
+  z-index: 1;
+}
+@keyframes textfly3 {
+  from {
+    margin-left: 100px;
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/*------------------------------------------------------------------------------------------ Endhomepage-------------------------------------------------------------------------- */
+/*------------------------------------------------------------------------------------------ Fullpage-------------------------------------------------------------------------- */
+/* daylaphanbanercuafullpage */
+.container {
+  width: 100%;
+  height: auto;
+}
+.container-header {
+  width: 100%;
+  height: 950px;
+  background-color: aqua;
+}
+.banner-header {
+  width: 100%;
+  height: 700px;
+  margin-top: 85px;
+  border-top: 40px solid black;
+  box-sizing: border-box;
+  height: 800px;
+  border-bottom: 40px solid black;
+  overflow: hidden;
+  position: relative;
+}
+.labelslider {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  left: 50%;
+}
+.labelslider > label {
+  background-color: white;
+  width: 30px;
+  height: 5px;
+  border: 3px solid black;
+  margin: 5px;
+}
+.labelslider > label:hover {
+  background-color: black;
+  cursor: pointer;
+}
+.banner-header-image > input {
+  display: none;
+}
+#img2:checked ~ .sliderimg1 {
+  margin-left: -100%;
+}
+
+.banner-header-image {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  /* animation: sliderimg 16s infinite;  */
+  animation: banner2 3s forwards;
+}
+.banner-header-image > img {
+  width: 100%;
+  height: 100%;
+}
+.banner {
+  width: 50%;
+  height: 500px;
+  animation: banner 2s forwards;
+  opacity: 0;
+}
+.banner > img {
+  width: 100%;
+  height: 100%;
+}
+.banner2 {
+  width: 50%;
+  height: 500px;
+  animation: banner2 2s forwards;
+  opacity: 0;
+}
+.banner2 > img {
+  width: 100%;
+  height: 100%;
+}
+.container-banner {
+  border-top: 3px solid black;
+  width: 100%;
+  height: 500px;
+  display: flex;
+  margin-top: 45px;
+}
+@keyframes banner {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes banner2 {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.container-sex {
+  width: 100%;
+  height: 650px;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+.sex {
+  width: 100%;
+  height: 80px;
+  margin-top: 70px;
+  text-align: center;
+}
+.sex > a {
+  text-decoration: none;
+  font-size: 30px;
+  border: 3px solid black;
+  padding-left: 200px;
+  padding-right: 200px;
+  color: black;
+  margin-bottom: 20px;
+}
+.sex > a:hover {
+  background-color: black;
+  color: white;
+}
+.sex-banner {
+  width: 100%;
+  height: 400px;
+  align-items: center;
+  text-align: center;
+}
+.sex-banner > img {
+  width: 60%;
+  height: 400px;
+}
+
+.container-iteam {
+  width: 100%;
+  height: 800px;
+  text-align: center;
+  align-items: center;
+}
+.gallery-dislay {
+  overflow: hidden;
+  width: 80%;
+  height: 600px;
+  margin: 0 auto;
+}
+.gallery-wrap {
+  display: flex;
+  animation: slideshow 60s infinite;
+  width: 200%;
+  animation-delay: 5s;
+}
+.gallery-wrap2 {
+  display: flex;
+}
+.gllery-image {
+  margin: 10px;
+  width: 200%;
+}
+@keyframes slideshow {
+  10% {
+    margin-left: -25%;
+  }
+  20% {
+    margin-left: -50%;
+  }
+  30% {
+    margin-left: -75%;
+  }
+  40% {
+    margin-left: -100%;
+  }
+  60% {
+    margin-left: -125%;
+  }
+  70% {
+    margin-left: -150%;
+  }
+  80% {
+    margin-left: -175%;
+  }
+  90% {
+    margin-left: -200%;
+  }
+  100% {
+    margin-left: -200%;
+  }
+}
+.container-banner-mix {
+  width: 100%;
+  align-items: center;
+  text-align: center;
+}
+.container-banner-mix > img {
+  width: 95%;
+}
+.contact-lienhe > a > img {
+  transition: transform linear 0.2s;
+}
+.contact-lienhe > a > img:hover {
+  transform: scale(1.2);
+}
+.phone > a > img {
+  transition: transform linear 0.2s;
+  margin-top: 24px;
+}
+.phone > a > img:hover {
+  transform: rotate(360deg);
+}
+/*------------------------------------------------------------------------------------------endFullpage-------------------------------------------------------------------------- */
+
+/* ----------------------------------------------------------------detailpage--------------------------------------------------------------------------- */
+.container-chitietsanpham {
+  width: 100%;
+  height: 1800px;
+  position: relative;
+}
+.container-chitietsanpham-item {
+  margin-top: 40px;
+  box-sizing: border-box;
+  height: 100%;
+  border-bottom: 200px solid black;
+}
+.container-item {
+  width: 345px;
+  height: 400px;
+  box-sizing: border-box;
+  margin-left: 60px;
+  border: 2px solid black;
+  float: left;
+  margin-top: 80px;
+}
+.ifor-item > ul > li {
+  list-style: none;
+  /* padding-bottom: 5px; */
+}
+.ifor-item > ul > li > p {
+  margin: 0;
+  padding-top: 2%;
+}
+.item-image > a > img {
+  width: 100%;
+  height: 100%;
+}
+.item-image {
+  border: 1px solid black;
+  margin-left: 11px;
+  margin-top: 10px;
+  width: 314px;
+  height: 258px;
+}
+.ifor-item {
+  text-align: center;
+  margin-left: -50px;
+}
+.button-add {
+  width: 200px;
+  height: 38px;
+  font-size: 15px;
+  border: 2px black solid;
+  background: black;
+  color: white;
+  margin-top: 2%;
+}
+.button-add:hover {
+  background-color: white;
+  color: black;
+  cursor: pointer;
+}
+/* -----------popup ----------- */
+#popup {
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  position: fixed;
+  margin-top: 50px;
+
+  z-index: 1;
+}
+#popup:target {
+  display: block;
+}
+.popup-infor {
+  width: 90%;
+  height: 80%;
+  background-color: white;
+  margin-top: 4%;
+  margin-left: 5%;
+  position: relative;
+  border: 2px solid black;
+}
+.lightbox {
+  display: flex !important;
+  flex-direction: column-reverse !important;    
+}
+.close {
+  width: 38px;
+  height: 35px;
+  border: 2px solid black;
+  position: absolute;
+  left: 94%;
+  font-size: 40px;
+  border-radius: 5px;
+  top: 10px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+.close > a {
+  text-decoration: none;
+  color: black;
+}
+/* -----------thongtinchitietsanpham ----------- */
+.popup-infor > h1 {
+  text-align: center;
+  margin-top: 4px;
+}
+.wrapp {
+  width: 100%;
+  height: 100%;
+}
+.mat-dialog-container{
+  padding:0px !important;
+  border-radius: 0px;
+}
+/* ------------------------------------------------------admin---------------------------------------- */
+html,
+body {
+  height: 100%;
+}
+body {
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

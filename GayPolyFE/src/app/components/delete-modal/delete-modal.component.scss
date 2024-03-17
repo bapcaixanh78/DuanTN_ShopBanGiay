@@ -1,0 +1,97 @@
+.delete-dashboard{
+    width: 480px;
+    height: 140px;
+    background-color: #fff;
+    border-radius: 10px;
+    position: absolute;
+    left: calc(50% - 480px/2);
+    // top:300px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-weight: 600;
+    box-shadow: 2px 2px 6px 0px #00000082;
+    transition: .3s ease-in;
+}
+.escape-icon{
+    position: absolute;
+    left: 90%;
+    top: 12px;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #cdcdcd;
+    border-radius: 5px;
+    padding-left: 3px;
+    box-sizing: border-box;
+}
+.escape-icon:hover{
+    background-color: #bbb;
+}
+a.close-popup{
+    position: absolute;
+    top: -6px;
+    right: 2px;
+    font-size: 24px;
+    color: #111;
+    text-decoration: none;
+}
+.heading-delete{
+    width: 380px;
+    height: 20px;
+    font-size: 14px;
+    position: absolute;
+    left: 35px;
+    top: 15px;
+    user-select: none;
+}
+
+.blue-color{
+    color: #1e98d7;
+}
+
+
+.btn-btn-delete{
+    width: 320px;
+    height: 40px;
+    position: absolute;
+    left: calc(50% - 320px/2);
+    top: 70px;
+}
+.btn-update-perm,.btn-detele-temp{
+    width: 140px;
+    height: 35px;
+    border-radius: 5px;
+    color: #fff;
+    position: absolute;
+    border: none;
+    cursor: pointer;
+    background-color: #d9001c;
+}
+.btn-detele-temp{
+    left: 160px;
+}
+.btn-update-perm:hover,.btn-detele-temp:hover{
+    transition: .5s;
+    background-color: rgba(217, 0, 29, 0.8);
+}
+@media only screen and (max-width: 510px){
+    .fm-input{
+        margin-left: 0px;
+    }
+    .delete-dashboard{
+        width: 300px;
+        height: 180px;
+        left: calc(50% - 300px/2);
+    }
+    .btn-btn-delete{
+        top: 70px;
+        left: 80px;
+    }
+    .btn-detele-temp{
+        left: 0;
+        top: 50px;
+    }
+    .heading-delete{
+        width: 220px;
+        text-align: center;
+    }
+}
