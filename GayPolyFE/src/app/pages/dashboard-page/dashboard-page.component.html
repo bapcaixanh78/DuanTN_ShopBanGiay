@@ -35,12 +35,22 @@
   <div class="container">
     <div class="slider-bar">
       <ul>
-        <li>
+        <li  (click)="changeTable(1)" class="slider-bar-li">
           Quản Lý Sản Phẩm
         </li>
+        <li (click)="changeTable(2)"  class="slider-bar-li"> 
+          Quản Lý Đơn Hàng
+      </li>
+      <li (click)="changeTable(3)"  class="slider-bar-li"> 
+        Quản Lý Voucher
+      </li>
+      <li (click)="changeTable(4)"  class="slider-bar-li"> 
+        Quản Lý Tài Khoản
+      </li>
       </ul>
+
     </div>
-    <div class="container-table">
+    <div *ngIf="codeTable == 1" class="container-table">
       <table  class="dashboard__table">
         <thead class="dashboard__table--col">
           <th class="dashboard__table--col--item">
@@ -86,7 +96,16 @@
       </table>
     </div>
    
-  
+    <div *ngIf="codeTable == 2" class="container-table">
+      <app-order-management></app-order-management>
+    </div>
+
+    <div *ngIf="codeTable == 3" class="container-table">
+      <app-voucher></app-voucher>
+    </div>
+    <div *ngIf="codeTable == 4" class="container-table">
+     <app-account></app-account>
+    </div>
   </div>
 
   <pagination-template *ngIf="data.length > 10" #p="paginationApi" [id]="config.id"

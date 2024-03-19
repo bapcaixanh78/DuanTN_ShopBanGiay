@@ -1,0 +1,87 @@
+
+<div class="header">
+    <header>
+      <div class="header-navbar">
+        <a href="index.html">HNShop</a>
+        <nav class="header-nav">
+          <ul class="header-list">
+            <li class="header-list--item">
+              <a routerLink="/fullpage">Trang Chủ</a>
+            </li>
+            <li class="header-list--item">
+              <a routerLink="/product">Thời Trang </a>
+            </li>
+            <li class="header-list--item">
+              <a routerLink="/detail">Tin Tức</a>
+            </li>
+            <li class="header-list--item">
+              <a href="/fullpage/#contact">Về Chúng Tôi</a>
+            </li>
+            <li class="header-list--item">
+              <a href="/fullpage/#contact">Liên Hệ </a>
+            </li>
+            <li class="header-list--item">
+              <a routerLink="/fullpage"> Kết Nối :</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="seach">
+          <!-- <input  id="seach-input" type="text">
+            <a href=""><img src="./assets/image/Screenshot 2022-05-21 001617.png" alt=""></a> -->
+          <a href="https://www.facebook.com/profile.php?id=100013145042189"
+            ><img src="./assets/image/iconfb.jpg" alt=""
+          />
+        </a>
+          <a href="https://www.facebook.com/profile.php?id=100013145042189"
+            ><img src="./assets/image/iconmayanh.jpg" alt=""
+          /></a>
+          <a href="https://www.facebook.com/profile.php?id=100013145042189"
+            ><img src="./assets/image/iconyoutube.jpg" alt=""
+          /></a>
+          <a href="https://www.facebook.com/profile.php?id=100013145042189"
+            ><img src="./assets/image/iconzalo.jpg" alt=""
+          /></a>
+        </div>
+      </div>
+    </header>
+  </div>
+
+<div class="container" style="min-height: 800px; margin-top: 140px;">
+    <div class="table-responsive">
+        <table class="table table-striped">
+          <tbody>
+            <tr>
+                  <th class="dashboard__table--col--item3">Mã Đơn Hàng</th>
+                  <th class="dashboard__table--col--item3">Giá Đơn Hàng</th>
+                  <th class="dashboard__table--col--item3">Ngày Đặt Hàng</th>
+                  <th class="dashboard__table--col--item3">Ghi Chú</th>
+                  <th class="dashboard__table--col--item3">Danh Sách Sản Phẩm</th>
+                  <th class="dashboard__table--col--item3">Trạng Thái Đơn Hàng</th>
+            </tr>
+            <tr *ngFor="let item of data let i = index">
+                  <td>{{item.id}}</td>
+                  <td>{{ item.priceOder}}</td> 
+                  <td>{{ item.dayOder}}</td> 
+                  <td>{{item.description}}</td>
+                  <td>{{item.viewNameP}}</td>
+                  <td *ngIf="item.status == 0">Chờ Xác Nhận</td>
+                  <td *ngIf="item.status == 1">Đã Hoàn Thành</td>
+              <td>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+</div>
+<section class="footer" id="footer">
+  <div class="container-lienhe">
+    <p style="margin-top: 30px">Giay Poly</p>
+    <!-- <div class="hiden">
+        <a href="" class="" style="color: white">aaaaaa</a>
+      </div> -->
+    <img src="./assets/image/footer.jpg" alt="" /> alt="">
+    <div class="logodangky">
+      <img src="./assets/image/dangky.jpg" alt="" />
+    </div>
+  </div>
+</section>

@@ -8,6 +8,9 @@ namespace GiayPoly.AutoMap
     {
         public AutoMapService() { 
             CreateMap<Product,ProductViewModel>().ReverseMap();
+            CreateMap<Oder, OderView>().ReverseMap();
+            CreateMap<Voucher, voucherView>().ReverseMap();
+            CreateMap<Account,AccountViews>().ReverseMap();
         }
     }
 }

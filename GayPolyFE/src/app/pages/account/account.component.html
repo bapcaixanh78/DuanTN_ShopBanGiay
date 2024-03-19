@@ -1,0 +1,38 @@
+<div style="width: 100% !important;" class="container-table">
+    <table  class="dashboard__table">
+      <thead class="dashboard__table--col">
+        <th class="dashboard__table--col--item">
+          <button (click)="onAdd()">
+            <i class="bx bx-plus-medical dashboard__table--col--item--plus"></i>
+          </button>
+        </th>
+        <th class="dashboard__table--col--item3">Tên Người Dùng</th>
+        <th class="dashboard__table--col--item3">Email</th>
+        <th class="dashboard__table--col--item3">Số Điện Thoại</th>
+        <th class="dashboard__table--col--item3">Chức Vụ</th>
+        <th class="dashboard__table--col--item3">Trạng Thái</th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of data | paginate: config" >
+          <td>
+            <button (click)="onUpdate(item.id)">
+              <i class="bx bxs-pencil dashboard__table--col--item--pencil"></i>
+            </button>
+            <button (click)="onDelete(item.id)">
+              <i class="bx bxs-trash dashboard__table--col--item--trash"></i>
+            </button>
+          </td>
+          <td>
+            {{ item.userName }}
+          </td>
+
+          <td>{{ item.email }}</td>
+          <td>{{ item.phoneNumber}}</td>
+          <td *ngIf="item.role == 1">Quản lý</td>
+          <td *ngIf="item.role == 2">Người Dùng</td>
+          <td *ngIf="item.role != -1">Đang Hoạt Động</td>
+          <td *ngIf="item.role == -1">Vô Hiệu Hóa</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

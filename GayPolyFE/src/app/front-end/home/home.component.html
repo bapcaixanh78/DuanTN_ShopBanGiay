@@ -32,21 +32,18 @@
         </ul>
       </nav>
       <div class="seach">
-        <!-- <input  id="seach-input" type="text">
-          <a href=""><img src="./assets/image/Screenshot 2022-05-21 001617.png" alt=""></a> -->
-        <a href="https://www.facebook.com/profile.php?id=100013145042189"
-          ><img src="./assets/image/iconfb.jpg" alt=""
-        />
-      </a>
-        <a href="https://www.facebook.com/profile.php?id=100013145042189"
-          ><img src="./assets/image/iconmayanh.jpg" alt=""
-        /></a>
-        <a href="https://www.facebook.com/profile.php?id=100013145042189"
-          ><img src="./assets/image/iconyoutube.jpg" alt=""
-        /></a>
-        <a href="https://www.facebook.com/profile.php?id=100013145042189"
-          ><img src="./assets/image/iconzalo.jpg" alt=""
-        /></a>
+        <div class="btn-group">
+          <a  *ngIf="login==false" href="/login">Login</a>
+          <div>
+          <button *ngIf="login==true" type="button" style="background-color: white; color:  black; border: unset;" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fa fa-user" aria-hidden="true"></i> {{user}}
+          </button>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="/useroder">Đơn Hàng Của Tôi</a></li>
+            <li><a class="dropdown-item" (click)="logOut()">Đăng Xuất</a></li>
+          </ul>
+          </div>
+        </div>
       </div>
     </div>
   </header>

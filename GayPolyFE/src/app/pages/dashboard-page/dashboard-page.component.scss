@@ -6,6 +6,18 @@
 .slider-bar{
   width: 15%;
 }
+.slider-bar-li{
+  list-style: none;
+    white-space: nowrap;
+    background: #9edef6;
+    /* content: close-quote; */
+    color: white;
+    padding: 10px;
+    margin-right: 5px;
+    margin-top: 5px;
+    cursor: pointer;
+    width: 134px;
+}
 .dashboard {
   overflow: hidden;
   height: calc(100vh - 84px);

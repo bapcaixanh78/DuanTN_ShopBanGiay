@@ -49,4 +49,27 @@ export const uploadImge = baseURL + 'Product/UploadImg'
 
 //LoginAPI
 export const postLogin = baseURL + 'Account/Login';
+export const createAccount = baseURL + 'Account/createAcount';
+export const getAccountId= baseURL + 'Account/GetById';
+export const getListUser= baseURL + 'Account/GetListUser';
+export const lockAccount = baseURL + 'Account/Lock?id=';
+export const deleteUser= baseURL + 'Account/Delete?id=';
+export const UpdateAccount = baseURL + 'Account/Update?id=';
 export const getUserName = baseURL + 'Users/name';
+
+//oderApi
+export const getOder = baseURL + 'Oder/GetList';
+export const getOderId = baseURL + 'Oder/GetById';
+export const getByEmail= baseURL + 'Oder/GetByEmail?email=';
+export const createOder = baseURL + 'Oder/Create';
+export const updateOder = baseURL + 'Oder/Update?id=';
+export const deleteOder = baseURL + 'Oder/Delete?id=';
+
+//voucherApi
+export const getVoucher = baseURL + 'Voucher/GetList';
+export const getVoucherId = baseURL + 'Voucher/GetById';
+export const geVouchertByEmail= baseURL + 'Voucher/GetByEmail?email=';
+export const createVoucher = baseURL + 'Voucher/Create';
+export const updateVoucher = baseURL + 'Voucher/Update?id=';
+export const getVoucherCode = baseURL + 'Voucher/GetByCode?code=';
+export const deleteVoucher = baseURL + 'Voucher/Delete?id=';

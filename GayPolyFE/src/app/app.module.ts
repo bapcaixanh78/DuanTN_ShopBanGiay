@@ -20,6 +20,16 @@ import { LoginComponent } from './pages/login/login.component';
 import { ToastrModule } from 'ngx-toastr';
 import { HomeComponent } from './front-end/home/home.component';
 import { ProductComponent } from './front-end/product/product.component';
+import { OrderManagementComponent } from './pages/order-management/order-management.component';
+import { ModalComponent } from './pages/order-management/modal/modal.component';
+import { CartComponent } from './front-end/cart/cart.component';
+import { CheckoutComponent } from './front-end/checkout/checkout.component';
+import { UserOderComponent } from './front-end/user-oder/user-oder.component';
+import { VoucherComponent } from './pages/voucher/voucher.component';
+import { ModalvoucherComponent } from './pages/voucher/modalvoucher/modalvoucher.component';
+import { AccountComponent } from './pages/account/account.component';
+import { ModalAccountComponent } from './pages/account/modal-account/modal-account.component';
+
 
 
 
@@ -35,7 +45,16 @@ import { ProductComponent } from './front-end/product/product.component';
     ModalAddComponent,
     LoginComponent,
     HomeComponent,
-    ProductComponent
+    ProductComponent,
+    OrderManagementComponent,
+    ModalComponent,
+    CartComponent,
+    CheckoutComponent,
+    UserOderComponent,
+    VoucherComponent,
+    ModalvoucherComponent,
+    AccountComponent,
+    ModalAccountComponent
   ],
   imports: [
     BrowserModule,

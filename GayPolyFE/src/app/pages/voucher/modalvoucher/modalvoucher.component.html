@@ -1,0 +1,77 @@
+<ng-container *ngIf="formStatus == true">
+    <div class="add-dashboard">
+        <div class="escape-icon">
+          <a  class="close-popup" (click)="closePopup()">&times;</a>
+        </div>
+        <div class="heading-add blue-color">THÊM MỚI SẢN PHẨM</div>
+        <form [formGroup]=" form" (ngSubmit)="onSave()">
+          <div class="fm">
+            <div class="fm-name blue-color">
+              Tên Voucher<span class="fm-name-redstar"> *</span>
+            </div>
+            <div class="fm-input">
+              <input type="text" name="" id="name"  formControlName="Name" required />
+            </div>
+          </div>
+          <div class="fm">
+            <div class="fm-name blue-color">
+              Mã Voucher<span class="fm-name-redstar"> *</span>
+            </div>
+            <div class="fm-input">
+              <input type="text" name="" id="name"  formControlName="Code" required />
+            </div>
+          </div>
+          <div class="fm">
+            <div class="fm-name blue-color">
+              Giá Trị Voucher<span class="fm-name-redstar"> *</span>
+            </div>
+            <div class="fm-input">
+              <input min="0" type="number" name="" id="number"  formControlName="ValueVoucher"
+                pattern="[0-999]" required />
+            </div>
+          </div>
+          <div class="fm">
+            <div class="fm-name blue-color">Hạn Dùng<span class="fm-name-redstar"> *</span></div>
+            <div class="fm-input">
+              <input style="resize: none" type="date"  formControlName="ExpiryView">
+            </div>
+          </div>
+          <div class="fm">
+            <div class="fm-name blue-color">Lượt Dùng<span class="fm-name-redstar"> *</span></div>
+            <div class="fm-input">
+              <input style="resize: none" min="0" type="number" name="" id="number"  pattern="[0-999]" maxlength="4000" formControlName="TurnUseVoucher">
+            </div>
+          </div>
+          <div class="fm">
+            <div class="fm-name blue-color">Mô Tả <span class="fm-name-redstar"> *</span></div>
+            <div class="fm-input">
+              <textarea style="resize: none" type="number" name="" id="number" maxlength="4000" formControlName="Description"></textarea>
+            </div>
+          </div>
+
+          <div class="btn">
+            <button class="btn-detele" (click)="closePopup()">HUỶ</button>
+            <button type="submit" value="add" class="btn-add">Save</button>
+          </div>
+        </form>
+      </div>
+</ng-container>
+
+
+  <ng-container *ngIf="formStatus == false">
+    <div class="delete-dashboard">
+        <div class="escape-icon" style="cursor: pointer">
+          <a class="close-popup" (click)="closePopup()">&times;</a>
+        </div>
+        <div class="heading-delete blue-color">
+          BẠN CÓ CHẮC CHẮN MUỐN XOÁ SẢN PHẨM NÀY KHÔNG?
+        </div>
+        <div class="btn-btn-delete">
+          <button class="btn-update-perm" (click)="onDelete()">Xóa</button>
+          <!-- <button class="btn-detele-temp" (click)="onDeleteTmp()">
+            XOÁ TẠM THỜI
+          </button> -->
+        </div>
+      </div>
+      
+  </ng-container>

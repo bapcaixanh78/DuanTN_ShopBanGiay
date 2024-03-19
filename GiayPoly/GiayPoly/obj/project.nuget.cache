@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "S85SdMxM5SFrlwyMT2jPR5uY8Pq2WoH7xKAT1UIXxVWrHRllf/ehHxCAYvzbIlHl0khygDMgUdJPEyQ7Io/TsQ==",
+  "dgSpecHash": "LT70SvxavfHB7vfey4h+BTXssN8t9RaQVWFMCQVLPG92CDe1I0VIHfxI/A1R3/RSsu/Ns7ufVr3ZzaPlzZ1ViA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\VNT\\Desktop\\Web giay\\GiayPoly\\GiayPoly\\GiayPoly.csproj",
+  "projectFilePath": "C:\\Users\\VNT\\Desktop\\Giayoly\\Web giay\\GiayPoly\\GiayPoly\\GiayPoly.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\VNT\\.nuget\\packages\\automapper\\13.0.1\\automapper.13.0.1.nupkg.sha512",
     "C:\\Users\\VNT\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",

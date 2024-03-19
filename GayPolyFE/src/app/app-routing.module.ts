@@ -5,6 +5,8 @@ import { DetailPageComponent } from './pages/detail-page/detail-page.component';
 import { LoginComponent } from './pages/login/login.component';
 import { HomeComponent } from './front-end/home/home.component';
 import { ProductComponent } from './front-end/product/product.component';
+import { CartComponent } from './front-end/cart/cart.component';
+import { UserOderComponent } from './front-end/user-oder/user-oder.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -12,7 +14,9 @@ const routes: Routes = [
   { path: 'detail-page/:id', component: DetailPageComponent },
   { path: 'home', component: HomeComponent },
   { path: 'product', component: ProductComponent },
+  { path: 'cart', component: CartComponent},
   { path: '', component: HomeComponent },
+  { path: 'useroder', component: UserOderComponent },
 ];
 
 @NgModule({

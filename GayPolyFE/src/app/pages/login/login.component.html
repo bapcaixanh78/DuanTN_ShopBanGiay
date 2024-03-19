@@ -1,4 +1,5 @@
 <div class="login">
+<ng-container *ngIf="statusForm=='login'">
   <form class="login__form form-signin" [formGroup]="loginForm" (ngSubmit)="onSubmit()" #signInForm="ngForm">
     <h2 class="login__heading">Đăng Nhập</h2>
 
@@ -10,5 +11,33 @@
       required>
 
     <button class="login__button" type="submit">Đăng Nhập</button>
+
+    <a (click)="statusForm='dangky'" type="submit">Đăng Ký Tài Khoản</a>
+    <a  type="submit">Quên Mật Khẩu</a>
   </form>
+</ng-container>
+<ng-container *ngIf="statusForm=='dangky'">
+  <form class="login__form form-signin" [formGroup]="loginForm" #signInForm="ngForm">
+    <h2 class="login__heading">Đăng Ký Tài KHoản</h2>
+
+
+    <label for="inputlogin" class="login__label">Tên Người Dùng</label>
+    <input type="text" class="login__input" id="inputLogin" formControlName="UserName" ngModel required autofocus>
+
+    <label for="inputlogin" class="login__label">Email Đăng Nhập</label>
+    <input type="text" class="login__input" id="inputLogin" formControlName="Email" ngModel required autofocus>
+
+    <label for="inputlogin" class="login__label">Số Điện Thoại Liên Hệ</label>
+    <input type="number" class="login__input" id="inputLogin" formControlName="PhoneNumber" ngModel required autofocus>
+
+    <label for="inputPassword" class="login__label">Mật khẩu</label>
+    <input type="password" class="login__input" id="inputPassword" formControlName="Password" autocomplete="on" ngModel
+      required>
+
+    <button class="login__button" (click)="Dangky()" type="submit">Đăng Ký</button>
+
+    <a  style="cursor: pointer;" (click)="statusForm='login'" >Đăng Nhập</a>
+    <a >Quên Mật Khẩu</a>
+  </form>
+</ng-container>
 </div>

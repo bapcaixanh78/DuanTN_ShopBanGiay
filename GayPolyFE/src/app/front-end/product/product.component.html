@@ -25,14 +25,14 @@
               </li>
             </ul>
           </nav>
-          <div class="seach">
+          <div (click)="linkCart()" class="seach">
             <!-- <form [formGroup]="seachForm" (ngSubmit)="onSeach()">
               <input id="seach-input" type="text" formControlName="name" />
             </form> -->
             <!-- Button trigger modal -->
             <a type="button"  data-bs-toggle="modal" data-bs-target="#exampleModal">
               <span style="display: flex;"><img src="./assets/image/Screenshot 2022-05-21 001617.png" alt="" />
-              <div class="soluongsanpham"><p></p></div></span>
+              <div *ngIf="countCart > 0" class="soluongsanpham"><p >{{countCart}}</p></div></span>
             </a>
           </div>
         </div>
@@ -60,7 +60,7 @@
                         </li>
                       </ul>
                       <ul>
-                        <button  class="button-add">Mua Hàng</button>
+                        <button  class="button-add" (click)="addcart(product.id)" >Mua Hàng</button>
                         <!-- <button routerLink="/user" class="button-add">Mua Hàng</button> -->
                         <!-- <button (click)="addcart(product.id)" class="button-add">Mua Hàng</button> -->
                       </ul>

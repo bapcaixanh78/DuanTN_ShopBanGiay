@@ -19,6 +19,15 @@ export class AuthenService {
         }
     } 
   }
+  checkUser(){
+    if(localStorage.getItem('User')!=null){
+      return localStorage.getItem('User')
+    }
+    else{
+      this.router.navigate(['/login']);
+      return null;
+    }
+  }
   Logout(){
     localStorage.clear()
     this.router.navigate(['/login']);

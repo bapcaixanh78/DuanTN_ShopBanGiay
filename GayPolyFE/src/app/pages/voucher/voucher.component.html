@@ -1,0 +1,37 @@
+<div style="width: 100% !important;" class="container-table">
+    <table  class="dashboard__table">
+      <thead class="dashboard__table--col">
+        <th class="dashboard__table--col--item">
+          <button (click)="onAdd()">
+            <i class="bx bx-plus-medical dashboard__table--col--item--plus"></i>
+          </button>
+        </th>
+        <th class="dashboard__table--col--item2" >Tên Voucher</th>
+        <th class="dashboard__table--col--item3">Code</th>
+        <th class="dashboard__table--col--item3">Hạn Sử Dụng</th>
+        <th class="dashboard__table--col--item3">Giá Trị</th>
+        <th class="dashboard__table--col--item3">Lượt Sử Dụng</th>
+        <th class="dashboard__table--col--item3">Ghi Chú</th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of data | paginate: config" >
+          <td>
+            <button (click)="onUpdate(item.id)">
+              <i class="bx bxs-pencil dashboard__table--col--item--pencil"></i>
+            </button>
+            <button (click)="onDelete(item.id)">
+              <i class="bx bxs-trash dashboard__table--col--item--trash"></i>
+            </button>
+          </td>
+          <td>{{ item.name }}</td>
+          <td>{{ item.code}}</td>
+          <td>{{ item.expiryView}}</td> 
+          <td>{{ item.valueVoucher }}</td>
+          <td>{{ item.turnUseVoucher}}</td> 
+          <td>{{item.description}}</td>
+          <td *ngIf="item.status == 0">Chờ Xác Nhận</td>
+          <td *ngIf="item.status == 1">Đã Hoàn Thành</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

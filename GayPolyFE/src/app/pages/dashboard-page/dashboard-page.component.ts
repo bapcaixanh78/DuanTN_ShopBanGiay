@@ -23,6 +23,7 @@ interface defineDataCsv {
   styleUrls: ['./dashboard-page.component.scss'],
 })
 export class DashboardPageComponent implements OnInit {
+  codeTable:number = 3;
   search = '';
   host = host;
   message = '';
@@ -37,7 +38,6 @@ export class DashboardPageComponent implements OnInit {
   dataTmp: any[] = [];
   exportResult: defineDataCsv[] = [];
   resResult: any[] = [];
-
   constructor(
     private http: HttpClient,
     private matDialog: MatDialog,
@@ -94,6 +94,9 @@ export class DashboardPageComponent implements OnInit {
   };
   Logout(){
     this.admin.Logout()
+  }
+  changeTable(number:number){
+    this.codeTable = number
   }
   changeFormatDate = (value: string) => {
     let newDate = new Date(value);

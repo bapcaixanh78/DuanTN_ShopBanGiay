@@ -1,0 +1,129 @@
+
+<div class="header">
+    <header>
+      <div class="header-navbar">
+        <a href="index.html">HNShop</a>
+        <nav class="header-nav">
+          <ul class="header-list">
+            <li class="header-list--item">
+              <a routerLink="/fullpage">Trang Chủ</a>
+            </li>
+            <li class="header-list--item">
+              <a routerLink="/product">Thời Trang </a>
+            </li>
+            <li class="header-list--item">
+              <a routerLink="/detail">Tin Tức</a>
+            </li>
+            <li class="header-list--item">
+              <a href="/fullpage/#contact">Về Chúng Tôi</a>
+            </li>
+            <li class="header-list--item">
+              <a href="/fullpage/#contact">Liên Hệ </a>
+            </li>
+            <li class="header-list--item">
+              <a routerLink="/fullpage"> Kết Nối :</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="seach">
+          <!-- <input  id="seach-input" type="text">
+            <a href=""><img src="./assets/image/Screenshot 2022-05-21 001617.png" alt=""></a> -->
+          <a href="https://www.facebook.com/profile.php?id=100013145042189"
+            ><img src="./assets/image/iconfb.jpg" alt=""
+          />
+        </a>
+          <a href="https://www.facebook.com/profile.php?id=100013145042189"
+            ><img src="./assets/image/iconmayanh.jpg" alt=""
+          /></a>
+          <a href="https://www.facebook.com/profile.php?id=100013145042189"
+            ><img src="./assets/image/iconyoutube.jpg" alt=""
+          /></a>
+          <a href="https://www.facebook.com/profile.php?id=100013145042189"
+            ><img src="./assets/image/iconzalo.jpg" alt=""
+          /></a>
+        </div>
+      </div>
+    </header>
+  </div>
+
+<div class="container" style="min-height: 800px; margin-top: 140px;">
+    <div class="table-responsive">
+        <table class="table table-striped">
+          <tbody>
+            <tr>
+              <!-- <th scope="col">
+                        <div class="custom-checkbox custom-control">
+                            <input type="checkbox" class="custom-control-input" id="ckkAll">
+                            <label class="custom-control-label" for="ckkAll"></label>
+                        </div>
+                    </th> -->
+              <th scope="col">Tên sản phẩm</th>
+              <th scope="col">Hình ảnh </th>
+              <th scope="col">Giá sản phẩm </th>
+              <th scope="col">Số Lượng </th>
+            </tr>
+            <tr *ngFor="let product of cart let i = index">
+              <td>{{product.name}}</td>
+              <td id="{{product.id}}" class="product-img" (click)="onAddDelete(product.id)">
+                <!-- <img [src]="createImgUrl(product.img)" style="width: 80px; height: 80px" /> -->
+                <img  src="{{host}}/media/product/{{product.image}}"
+                  style="width: 80px; height: 80px" accept="image/png, image/jpeg" />
+              </td>
+              <!-- src="{{ product.img }} " -->
+              <td class="productprice">{{ product.price * product.amountProduct}}</td>
+              <td>
+                <button class="price" (click)="onPrice(product.id , 1 )">-</button>
+                 <span class="amountproduct" >{{product.amountProduct}}</span>
+                <button class="price" (click)="onPrice(product.id , 2)">+</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="pricesum"> 
+      
+        <p ><strong>Tổng Tiền :</strong><span style="margin-left: 6px;" id="sumprice2" >{{priceSum}} </span></p>
+        <p *ngIf="priceSale>0"><strong>Voucher Giảm :</strong><span style="margin-left: 6px;" id="sumprice2" >{{priceSale}} </span></p>
+        <p *ngIf="priceOder>0"><strong>Giá Thanh Toán :</strong><span style="margin-left: 6px;" id="sumprice2" >{{ priceOder}} </span></p>
+      
+        <input type="hidden" [(ngModel)]="priceSum"  >
+        <p ><strong>VouCher :</strong><span (input)="checkVoucher($event)" style="margin-left: 6px;" ><input type="text" ><span style="margin-left: 5px;cursor: pointer; background-color: black; padding: 5px; color: white;" (click)="useVoucher()">sử dụng</span></span></p> 
+        <span>{{voucherStatus}}</span>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger"  (click)="onDeleteAll()">Hủy Bỏ</button>
+        <a type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-primary btn-hn">Thanh Toán</a>
+      </div>
+</div>
+<section class="footer" id="footer">
+  <div class="container-lienhe">
+    <p style="margin-top: 30px">Giay Poly</p>
+    <!-- <div class="hiden">
+        <a href="" class="" style="color: white">aaaaaa</a>
+      </div> -->
+    <img src="./assets/image/footer.jpg" alt="" /> alt="">
+    <div class="logodangky">
+      <img src="./assets/image/dangky.jpg" alt="" />
+    </div>
+  </div>
+</section>
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Thanh Toán Đơn Hàng</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+          Xác Nhận Thanh Toán Hóa Đơn 
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal" aria-label="Close">Hủy Bỏ</button>
+        <button type="submit" (click)="onSubmit()" class="btn btn-primary btn-hn">Thanh Toán</button >
+      </div>
+    </div>
+  </div>
+</div>
+
