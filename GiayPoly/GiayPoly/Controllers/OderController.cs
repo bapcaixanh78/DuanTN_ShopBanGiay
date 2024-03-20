@@ -51,7 +51,7 @@ namespace GiayPoly.Controllers
         public async Task<IActionResult> GetById(string email)
         {
 
-            var oder = await _context.Oders.Where(x => x.UserName == email).ToListAsync();
+            var oder = await _context.Oders.Where(x => x.Email == email).ToListAsync();
             if (oder != null)
             {
                 return Ok(oder);
@@ -92,6 +92,12 @@ namespace GiayPoly.Controllers
             if (input == null)
             {
                 return null;
+            }
+            if(input.VoucherCode != "")
+            {
+                var voucher = await _context.Vouchers.FirstOrDefaultAsync(x => x.Code == input.VoucherCode);
+                if(voucher.TurnUseVoucher >0) voucher.TurnUseVoucher -= 1;
+                _context.Update(voucher);             
             }
             var user = await _context.Accounts.FirstOrDefaultAsync(x => x.Email == input.UserName);
             input.PhoneNumber = user.PhoneNumber;

@@ -40,7 +40,7 @@ namespace GiayPoly.Controllers
         [Route("GetListUser")]
         public async Task<IActionResult> GetList()
         {
-            var user = _context.Accounts.Where(x => x.role != 1).ToList();
+            var user = _context.Accounts.Where(x => x.role != 0).ToList();
 
             if (user == null)
             {
@@ -115,7 +115,7 @@ namespace GiayPoly.Controllers
                 return Ok(data);
             }
 
-            return null;
+            return Ok(null);
         }
     }
 }

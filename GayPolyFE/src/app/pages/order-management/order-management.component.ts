@@ -23,7 +23,7 @@ export class OrderManagementComponent implements OnInit {
     private admin :AuthenService,
   ){
     this.config = {
-      itemsPerPage: 10,
+      itemsPerPage: 7,
       currentPage: 1,
       totalItems: this.total,
     };
@@ -118,5 +118,8 @@ export class OrderManagementComponent implements OnInit {
         }
       );
   
+  }
+  pageChangeEvent(event:any){
+    this.config.currentPage= event
   }
 }

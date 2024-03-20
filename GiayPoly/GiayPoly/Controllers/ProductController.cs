@@ -49,6 +49,27 @@ namespace GiayPoly.Controllers
             }
             else { return Ok(null); }
         }
+        [HttpPost]
+        [Route("SetOderById")]
+        public async Task<IActionResult> SetOrderById(List<ListID> input)
+        {
+            try
+            {
+                var idList = input.Select(x => x.Id).ToList();
+                var productList = await _context.Products.Where(x => idList.Contains(x.Id)).ToListAsync();
+
+                productList.ForEach(p => p.Oder += 1);
+
+                _context.Products.UpdateRange(productList);
+                await _context.SaveChangesAsync();
+
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                return BadRequest("Có lỗi xảy ra: " + ex.Message);
+            }
+        }
         [HttpPut]
         [Route("Update")]
         public async Task<IActionResult> Update(int id, ProductViewModel input)

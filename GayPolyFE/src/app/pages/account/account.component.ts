@@ -34,12 +34,23 @@ export class AccountComponent implements OnInit {
    message:any ;
    host = host;
    product:any;
+   role:number;
   ngOnInit(): void {
     this.getData()
   }
   getData(){
+
+    var string = localStorage.getItem("Role")
+    if(string != null){
+      this.role = parseInt(string);
+    }
     this.http.get(getListUser).subscribe((res:any) =>{
+      if(this.role == 0){
         this.data = res
+      }
+      else{
+        this.data = res.filter((x:any) => x.role != 1)
+      }
 
         console.log(this.data)
     })
@@ -87,6 +98,9 @@ export class AccountComponent implements OnInit {
         })
         }
       );
+    }
+    pageChangeEvent(event:any){
+
     }
   onDelete = (idDlt: number) => {
     var url = getAccountId+"?id="+idDlt;

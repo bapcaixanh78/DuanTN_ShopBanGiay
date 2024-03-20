@@ -44,6 +44,7 @@ export class ModalAddComponent implements OnInit {
       Type: [""],
       VoucherCode: [""],
       Sale: [0],
+      Oder: [0],
     });
   }
   // public string? Name { get; set; }

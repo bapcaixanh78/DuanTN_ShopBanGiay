@@ -10,4 +10,8 @@
         public string? Type { get; set; }
         public int? sale { get; set; }
     }
+    public class ListID
+    {
+        public int Id { get; set; }
+    }
 }

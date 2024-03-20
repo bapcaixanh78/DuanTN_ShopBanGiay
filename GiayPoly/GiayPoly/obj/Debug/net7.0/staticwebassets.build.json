@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "4o80nv2VKLML+mCbsVWJ3WKeshFXbd+uQyJmbuZD8P8=",
+  "Hash": "1W/jnCGMIMLNJHuFFFrG5dmlI3iKwfrsb/LOY1mC/+g=",
   "Source": "GiayPoly",
   "BasePath": "_content/GiayPoly",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "GiayPoly\\wwwroot",
       "Source": "GiayPoly",
-      "ContentRoot": "C:\\Users\\VNT\\Desktop\\Giayoly\\Web giay\\GiayPoly\\GiayPoly\\wwwroot\\",
+      "ContentRoot": "D:\\Công viêc\\Công Việc\\Giayoly\\Web giay\\GiayPoly\\GiayPoly\\wwwroot\\",
       "BasePath": "_content/GiayPoly",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\VNT\\Desktop\\Giayoly\\Web giay\\GiayPoly\\GiayPoly\\wwwroot\\Media\\product\\202403170329171717.png",
+      "Identity": "D:\\Công viêc\\Công Việc\\Giayoly\\Web giay\\GiayPoly\\GiayPoly\\wwwroot\\Media\\product\\202403170329171717.png",
       "SourceId": "GiayPoly",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\VNT\\Desktop\\Giayoly\\Web giay\\GiayPoly\\GiayPoly\\wwwroot\\",
+      "ContentRoot": "D:\\Công viêc\\Công Việc\\Giayoly\\Web giay\\GiayPoly\\GiayPoly\\wwwroot\\",
       "BasePath": "_content/GiayPoly",
       "RelativePath": "Media/product/202403170329171717.png",
       "AssetKind": "All",
@@ -34,10 +34,10 @@
       "OriginalItemSpec": "wwwroot\\Media\\product\\202403170329171717.png"
     },
     {
-      "Identity": "C:\\Users\\VNT\\Desktop\\Giayoly\\Web giay\\GiayPoly\\GiayPoly\\wwwroot\\Media\\product\\202403170330252525.png",
+      "Identity": "D:\\Công viêc\\Công Việc\\Giayoly\\Web giay\\GiayPoly\\GiayPoly\\wwwroot\\Media\\product\\202403170330252525.png",
       "SourceId": "GiayPoly",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\VNT\\Desktop\\Giayoly\\Web giay\\GiayPoly\\GiayPoly\\wwwroot\\",
+      "ContentRoot": "D:\\Công viêc\\Công Việc\\Giayoly\\Web giay\\GiayPoly\\GiayPoly\\wwwroot\\",
       "BasePath": "_content/GiayPoly",
       "RelativePath": "Media/product/202403170330252525.png",
       "AssetKind": "All",
@@ -51,10 +51,10 @@
       "OriginalItemSpec": "wwwroot\\Media\\product\\202403170330252525.png"
     },
     {
-      "Identity": "C:\\Users\\VNT\\Desktop\\Giayoly\\Web giay\\GiayPoly\\GiayPoly\\wwwroot\\Media\\product\\202403170331404040.png",
+      "Identity": "D:\\Công viêc\\Công Việc\\Giayoly\\Web giay\\GiayPoly\\GiayPoly\\wwwroot\\Media\\product\\202403170331404040.png",
       "SourceId": "GiayPoly",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\VNT\\Desktop\\Giayoly\\Web giay\\GiayPoly\\GiayPoly\\wwwroot\\",
+      "ContentRoot": "D:\\Công viêc\\Công Việc\\Giayoly\\Web giay\\GiayPoly\\GiayPoly\\wwwroot\\",
       "BasePath": "_content/GiayPoly",
       "RelativePath": "Media/product/202403170331404040.png",
       "AssetKind": "All",
@@ -68,10 +68,10 @@
       "OriginalItemSpec": "wwwroot\\Media\\product\\202403170331404040.png"
     },
     {
-      "Identity": "C:\\Users\\VNT\\Desktop\\Giayoly\\Web giay\\GiayPoly\\GiayPoly\\wwwroot\\Media\\product\\202403170335323232.png",
+      "Identity": "D:\\Công viêc\\Công Việc\\Giayoly\\Web giay\\GiayPoly\\GiayPoly\\wwwroot\\Media\\product\\202403170335323232.png",
       "SourceId": "GiayPoly",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\VNT\\Desktop\\Giayoly\\Web giay\\GiayPoly\\GiayPoly\\wwwroot\\",
+      "ContentRoot": "D:\\Công viêc\\Công Việc\\Giayoly\\Web giay\\GiayPoly\\GiayPoly\\wwwroot\\",
       "BasePath": "_content/GiayPoly",
       "RelativePath": "Media/product/202403170335323232.png",
       "AssetKind": "All",
@@ -85,10 +85,10 @@
       "OriginalItemSpec": "wwwroot\\Media\\product\\202403170335323232.png"
     },
     {
-      "Identity": "C:\\Users\\VNT\\Desktop\\Giayoly\\Web giay\\GiayPoly\\GiayPoly\\wwwroot\\Media\\product\\20240317033704044.png",
+      "Identity": "D:\\Công viêc\\Công Việc\\Giayoly\\Web giay\\GiayPoly\\GiayPoly\\wwwroot\\Media\\product\\20240317033704044.png",
       "SourceId": "GiayPoly",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\VNT\\Desktop\\Giayoly\\Web giay\\GiayPoly\\GiayPoly\\wwwroot\\",
+      "ContentRoot": "D:\\Công viêc\\Công Việc\\Giayoly\\Web giay\\GiayPoly\\GiayPoly\\wwwroot\\",
       "BasePath": "_content/GiayPoly",
       "RelativePath": "Media/product/20240317033704044.png",
       "AssetKind": "All",
@@ -102,10 +102,10 @@
       "OriginalItemSpec": "wwwroot\\Media\\product\\20240317033704044.png"
     },
     {
-      "Identity": "C:\\Users\\VNT\\Desktop\\Giayoly\\Web giay\\GiayPoly\\GiayPoly\\wwwroot\\Media\\product\\202403170337161616.png",
+      "Identity": "D:\\Công viêc\\Công Việc\\Giayoly\\Web giay\\GiayPoly\\GiayPoly\\wwwroot\\Media\\product\\202403170337161616.png",
       "SourceId": "GiayPoly",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\VNT\\Desktop\\Giayoly\\Web giay\\GiayPoly\\GiayPoly\\wwwroot\\",
+      "ContentRoot": "D:\\Công viêc\\Công Việc\\Giayoly\\Web giay\\GiayPoly\\GiayPoly\\wwwroot\\",
       "BasePath": "_content/GiayPoly",
       "RelativePath": "Media/product/202403170337161616.png",
       "AssetKind": "All",
@@ -119,10 +119,10 @@
       "OriginalItemSpec": "wwwroot\\Media\\product\\202403170337161616.png"
     },
     {
-      "Identity": "C:\\Users\\VNT\\Desktop\\Giayoly\\Web giay\\GiayPoly\\GiayPoly\\wwwroot\\Media\\product\\202403170338393939.png",
+      "Identity": "D:\\Công viêc\\Công Việc\\Giayoly\\Web giay\\GiayPoly\\GiayPoly\\wwwroot\\Media\\product\\202403170338393939.png",
       "SourceId": "GiayPoly",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\VNT\\Desktop\\Giayoly\\Web giay\\GiayPoly\\GiayPoly\\wwwroot\\",
+      "ContentRoot": "D:\\Công viêc\\Công Việc\\Giayoly\\Web giay\\GiayPoly\\GiayPoly\\wwwroot\\",
       "BasePath": "_content/GiayPoly",
       "RelativePath": "Media/product/202403170338393939.png",
       "AssetKind": "All",
@@ -136,10 +136,10 @@
       "OriginalItemSpec": "wwwroot\\Media\\product\\202403170338393939.png"
     },
     {
-      "Identity": "C:\\Users\\VNT\\Desktop\\Giayoly\\Web giay\\GiayPoly\\GiayPoly\\wwwroot\\Media\\product\\202403170340101010.png",
+      "Identity": "D:\\Công viêc\\Công Việc\\Giayoly\\Web giay\\GiayPoly\\GiayPoly\\wwwroot\\Media\\product\\202403170340101010.png",
       "SourceId": "GiayPoly",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\VNT\\Desktop\\Giayoly\\Web giay\\GiayPoly\\GiayPoly\\wwwroot\\",
+      "ContentRoot": "D:\\Công viêc\\Công Việc\\Giayoly\\Web giay\\GiayPoly\\GiayPoly\\wwwroot\\",
       "BasePath": "_content/GiayPoly",
       "RelativePath": "Media/product/202403170340101010.png",
       "AssetKind": "All",
@@ -153,10 +153,10 @@
       "OriginalItemSpec": "wwwroot\\Media\\product\\202403170340101010.png"
     },
     {
-      "Identity": "C:\\Users\\VNT\\Desktop\\Giayoly\\Web giay\\GiayPoly\\GiayPoly\\wwwroot\\Media\\product\\202403170340414141.png",
+      "Identity": "D:\\Công viêc\\Công Việc\\Giayoly\\Web giay\\GiayPoly\\GiayPoly\\wwwroot\\Media\\product\\202403170340414141.png",
       "SourceId": "GiayPoly",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\VNT\\Desktop\\Giayoly\\Web giay\\GiayPoly\\GiayPoly\\wwwroot\\",
+      "ContentRoot": "D:\\Công viêc\\Công Việc\\Giayoly\\Web giay\\GiayPoly\\GiayPoly\\wwwroot\\",
       "BasePath": "_content/GiayPoly",
       "RelativePath": "Media/product/202403170340414141.png",
       "AssetKind": "All",
@@ -170,10 +170,10 @@
       "OriginalItemSpec": "wwwroot\\Media\\product\\202403170340414141.png"
     },
     {
-      "Identity": "C:\\Users\\VNT\\Desktop\\Giayoly\\Web giay\\GiayPoly\\GiayPoly\\wwwroot\\Media\\product\\202403170343282828.png",
+      "Identity": "D:\\Công viêc\\Công Việc\\Giayoly\\Web giay\\GiayPoly\\GiayPoly\\wwwroot\\Media\\product\\202403170343282828.png",
       "SourceId": "GiayPoly",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\VNT\\Desktop\\Giayoly\\Web giay\\GiayPoly\\GiayPoly\\wwwroot\\",
+      "ContentRoot": "D:\\Công viêc\\Công Việc\\Giayoly\\Web giay\\GiayPoly\\GiayPoly\\wwwroot\\",
       "BasePath": "_content/GiayPoly",
       "RelativePath": "Media/product/202403170343282828.png",
       "AssetKind": "All",
@@ -187,10 +187,10 @@
       "OriginalItemSpec": "wwwroot\\Media\\product\\202403170343282828.png"
     },
     {
-      "Identity": "C:\\Users\\VNT\\Desktop\\Giayoly\\Web giay\\GiayPoly\\GiayPoly\\wwwroot\\Media\\product\\202403170346131313.png",
+      "Identity": "D:\\Công viêc\\Công Việc\\Giayoly\\Web giay\\GiayPoly\\GiayPoly\\wwwroot\\Media\\product\\202403170346131313.png",
       "SourceId": "GiayPoly",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\VNT\\Desktop\\Giayoly\\Web giay\\GiayPoly\\GiayPoly\\wwwroot\\",
+      "ContentRoot": "D:\\Công viêc\\Công Việc\\Giayoly\\Web giay\\GiayPoly\\GiayPoly\\wwwroot\\",
       "BasePath": "_content/GiayPoly",
       "RelativePath": "Media/product/202403170346131313.png",
       "AssetKind": "All",
@@ -204,10 +204,10 @@
       "OriginalItemSpec": "wwwroot\\Media\\product\\202403170346131313.png"
     },
     {
-      "Identity": "C:\\Users\\VNT\\Desktop\\Giayoly\\Web giay\\GiayPoly\\GiayPoly\\wwwroot\\Media\\product\\202403170806222222.png",
+      "Identity": "D:\\Công viêc\\Công Việc\\Giayoly\\Web giay\\GiayPoly\\GiayPoly\\wwwroot\\Media\\product\\202403170806222222.png",
       "SourceId": "GiayPoly",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\VNT\\Desktop\\Giayoly\\Web giay\\GiayPoly\\GiayPoly\\wwwroot\\",
+      "ContentRoot": "D:\\Công viêc\\Công Việc\\Giayoly\\Web giay\\GiayPoly\\GiayPoly\\wwwroot\\",
       "BasePath": "_content/GiayPoly",
       "RelativePath": "Media/product/202403170806222222.png",
       "AssetKind": "All",
@@ -221,10 +221,10 @@
       "OriginalItemSpec": "wwwroot\\Media\\product\\202403170806222222.png"
     },
     {
-      "Identity": "C:\\Users\\VNT\\Desktop\\Giayoly\\Web giay\\GiayPoly\\GiayPoly\\wwwroot\\Media\\product\\202403170938343434.png",
+      "Identity": "D:\\Công viêc\\Công Việc\\Giayoly\\Web giay\\GiayPoly\\GiayPoly\\wwwroot\\Media\\product\\202403170938343434.png",
       "SourceId": "GiayPoly",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\VNT\\Desktop\\Giayoly\\Web giay\\GiayPoly\\GiayPoly\\wwwroot\\",
+      "ContentRoot": "D:\\Công viêc\\Công Việc\\Giayoly\\Web giay\\GiayPoly\\GiayPoly\\wwwroot\\",
       "BasePath": "_content/GiayPoly",
       "RelativePath": "Media/product/202403170938343434.png",
       "AssetKind": "All",
@@ -238,10 +238,10 @@
       "OriginalItemSpec": "wwwroot\\Media\\product\\202403170938343434.png"
     },
     {
-      "Identity": "C:\\Users\\VNT\\Desktop\\Giayoly\\Web giay\\GiayPoly\\GiayPoly\\wwwroot\\Media\\product\\202403171103464646.png",
+      "Identity": "D:\\Công viêc\\Công Việc\\Giayoly\\Web giay\\GiayPoly\\GiayPoly\\wwwroot\\Media\\product\\202403171103464646.png",
       "SourceId": "GiayPoly",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\VNT\\Desktop\\Giayoly\\Web giay\\GiayPoly\\GiayPoly\\wwwroot\\",
+      "ContentRoot": "D:\\Công viêc\\Công Việc\\Giayoly\\Web giay\\GiayPoly\\GiayPoly\\wwwroot\\",
       "BasePath": "_content/GiayPoly",
       "RelativePath": "Media/product/202403171103464646.png",
       "AssetKind": "All",
@@ -255,10 +255,10 @@
       "OriginalItemSpec": "wwwroot\\Media\\product\\202403171103464646.png"
     },
     {
-      "Identity": "C:\\Users\\VNT\\Desktop\\Giayoly\\Web giay\\GiayPoly\\GiayPoly\\wwwroot\\Media\\product\\202403171144323232.png",
+      "Identity": "D:\\Công viêc\\Công Việc\\Giayoly\\Web giay\\GiayPoly\\GiayPoly\\wwwroot\\Media\\product\\202403171144323232.png",
       "SourceId": "GiayPoly",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\VNT\\Desktop\\Giayoly\\Web giay\\GiayPoly\\GiayPoly\\wwwroot\\",
+      "ContentRoot": "D:\\Công viêc\\Công Việc\\Giayoly\\Web giay\\GiayPoly\\GiayPoly\\wwwroot\\",
       "BasePath": "_content/GiayPoly",
       "RelativePath": "Media/product/202403171144323232.png",
       "AssetKind": "All",
@@ -272,10 +272,10 @@
       "OriginalItemSpec": "wwwroot\\Media\\product\\202403171144323232.png"
     },
     {
-      "Identity": "C:\\Users\\VNT\\Desktop\\Giayoly\\Web giay\\GiayPoly\\GiayPoly\\wwwroot\\Media\\product\\202403171229292929.png",
+      "Identity": "D:\\Công viêc\\Công Việc\\Giayoly\\Web giay\\GiayPoly\\GiayPoly\\wwwroot\\Media\\product\\202403171229292929.png",
       "SourceId": "GiayPoly",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\VNT\\Desktop\\Giayoly\\Web giay\\GiayPoly\\GiayPoly\\wwwroot\\",
+      "ContentRoot": "D:\\Công viêc\\Công Việc\\Giayoly\\Web giay\\GiayPoly\\GiayPoly\\wwwroot\\",
       "BasePath": "_content/GiayPoly",
       "RelativePath": "Media/product/202403171229292929.png",
       "AssetKind": "All",
@@ -289,10 +289,10 @@
       "OriginalItemSpec": "wwwroot\\Media\\product\\202403171229292929.png"
     },
     {
-      "Identity": "C:\\Users\\VNT\\Desktop\\Giayoly\\Web giay\\GiayPoly\\GiayPoly\\wwwroot\\Media\\product\\202403190226595959.png",
+      "Identity": "D:\\Công viêc\\Công Việc\\Giayoly\\Web giay\\GiayPoly\\GiayPoly\\wwwroot\\Media\\product\\202403190226595959.png",
       "SourceId": "GiayPoly",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\VNT\\Desktop\\Giayoly\\Web giay\\GiayPoly\\GiayPoly\\wwwroot\\",
+      "ContentRoot": "D:\\Công viêc\\Công Việc\\Giayoly\\Web giay\\GiayPoly\\GiayPoly\\wwwroot\\",
       "BasePath": "_content/GiayPoly",
       "RelativePath": "Media/product/202403190226595959.png",
       "AssetKind": "All",
@@ -306,10 +306,95 @@
       "OriginalItemSpec": "wwwroot\\Media\\product\\202403190226595959.png"
     },
     {
-      "Identity": "C:\\Users\\VNT\\Desktop\\Giayoly\\Web giay\\GiayPoly\\GiayPoly\\wwwroot\\noimg.png",
+      "Identity": "D:\\Công viêc\\Công Việc\\Giayoly\\Web giay\\GiayPoly\\GiayPoly\\wwwroot\\Media\\product\\202403200309595959.png",
       "SourceId": "GiayPoly",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\VNT\\Desktop\\Giayoly\\Web giay\\GiayPoly\\GiayPoly\\wwwroot\\",
+      "ContentRoot": "D:\\Công viêc\\Công Việc\\Giayoly\\Web giay\\GiayPoly\\GiayPoly\\wwwroot\\",
+      "BasePath": "_content/GiayPoly",
+      "RelativePath": "Media/product/202403200309595959.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Media\\product\\202403200309595959.png"
+    },
+    {
+      "Identity": "D:\\Công viêc\\Công Việc\\Giayoly\\Web giay\\GiayPoly\\GiayPoly\\wwwroot\\Media\\product\\202403200742202020.png",
+      "SourceId": "GiayPoly",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Công viêc\\Công Việc\\Giayoly\\Web giay\\GiayPoly\\GiayPoly\\wwwroot\\",
+      "BasePath": "_content/GiayPoly",
+      "RelativePath": "Media/product/202403200742202020.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Media\\product\\202403200742202020.png"
+    },
+    {
+      "Identity": "D:\\Công viêc\\Công Việc\\Giayoly\\Web giay\\GiayPoly\\GiayPoly\\wwwroot\\Media\\product\\202403200758484848.png",
+      "SourceId": "GiayPoly",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Công viêc\\Công Việc\\Giayoly\\Web giay\\GiayPoly\\GiayPoly\\wwwroot\\",
+      "BasePath": "_content/GiayPoly",
+      "RelativePath": "Media/product/202403200758484848.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Media\\product\\202403200758484848.png"
+    },
+    {
+      "Identity": "D:\\Công viêc\\Công Việc\\Giayoly\\Web giay\\GiayPoly\\GiayPoly\\wwwroot\\Media\\product\\202403201010444444.png",
+      "SourceId": "GiayPoly",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Công viêc\\Công Việc\\Giayoly\\Web giay\\GiayPoly\\GiayPoly\\wwwroot\\",
+      "BasePath": "_content/GiayPoly",
+      "RelativePath": "Media/product/202403201010444444.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Media\\product\\202403201010444444.png"
+    },
+    {
+      "Identity": "D:\\Công viêc\\Công Việc\\Giayoly\\Web giay\\GiayPoly\\GiayPoly\\wwwroot\\Media\\product\\202403201016525252.png",
+      "SourceId": "GiayPoly",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Công viêc\\Công Việc\\Giayoly\\Web giay\\GiayPoly\\GiayPoly\\wwwroot\\",
+      "BasePath": "_content/GiayPoly",
+      "RelativePath": "Media/product/202403201016525252.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Media\\product\\202403201016525252.png"
+    },
+    {
+      "Identity": "D:\\Công viêc\\Công Việc\\Giayoly\\Web giay\\GiayPoly\\GiayPoly\\wwwroot\\noimg.png",
+      "SourceId": "GiayPoly",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Công viêc\\Công Việc\\Giayoly\\Web giay\\GiayPoly\\GiayPoly\\wwwroot\\",
       "BasePath": "_content/GiayPoly",
       "RelativePath": "noimg.png",
       "AssetKind": "All",

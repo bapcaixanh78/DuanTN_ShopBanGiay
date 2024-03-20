@@ -112,4 +112,7 @@ export class VoucherComponent implements OnInit {
       );
   
   }
+  pageChangeEvent(event:any){
+    this.config.currentPage= event
+  }
 }

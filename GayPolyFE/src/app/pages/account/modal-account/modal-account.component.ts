@@ -23,15 +23,20 @@ export class ModalAccountComponent implements OnInit {
   ) { }
   message: string;
   data:any;
+  role:number;
   formStatus:any;
   form = this.formBuilder.group({
     UserName: [''],
     PhoneNumber : [],
     Email: [""],
-    role: [''],
+    role: [],
     Password : [""],
   });
   ngOnInit(): void {
+    var string = localStorage.getItem("Role")
+    if(string != null){
+      this.role = parseInt(string);
+    }
     this.data = this.dialogData.data;
     this.formStatus = this.dialogData.formStatus;
     if(this.data != null){
@@ -52,26 +57,36 @@ export class ModalAccountComponent implements OnInit {
       this.onAdd();
     }
   }
+  changeInt(value:any){
+    if (typeof value === 'string') {
+      return parseInt(value);
+    }
+    else{
+      return value
+    }
+  }
   onAdd = () => {  
+    this.form.value.role = this.changeInt(this.form.value.role);
     this.http.post(createAccount, this.form.value).subscribe((res: any) => {
+      console.log(res)
       if (res != null) {
-          this.closePopup(false, "Tạo Mới Sản Phẩm Thành Công !")
+          this.closePopup(false, "Tạo Mới Tài Khoản Thành Công !")
        
       }
       else {
-        this.closePopup(true, "Tạo Mới Sản Phẩm Không Thành Công !")
+        this.closePopup(true, "Tạo Mới Tài KhoảnKhông Thành Công !")
       }
     })
   }
   onUpdate = () => {
-    console.log(this.form.value)
+    this.form.value.role = this.changeInt(this.form.value.role);
     this.http.put(UpdateAccount + this.data.id, this.form.value).subscribe((res: any) => {
       if (res != null) {
-          this.closePopup(false, "Cập Nhật Sản Phẩm Thành Công !")
+          this.closePopup(false, "Cập Nhật Tài Khoản Thành Công !")
       
       }
       else {
-        this.closePopup(true, "Cập Nhật Sản Phẩm Không Thành Công !")
+        this.closePopup(true, "Cập Nhật STài KhoảnKhông Thành Công !")
       }
     })
   };
@@ -86,7 +101,7 @@ export class ModalAccountComponent implements OnInit {
         },
         error: (err) => {
           console.log(err);
-          this.message = 'Xóa sản phẩm không thành công';
+          this.message = 'Xóa Tài Khoản không thành công';
           this.closePopup(true, this.message);
           // alert('Cập nhật không thành công');
         },

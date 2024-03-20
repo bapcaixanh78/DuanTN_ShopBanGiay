@@ -16,6 +16,7 @@ namespace GiayPoly.DBcontext
         public DbSet<Product> Products { get; set; }
         public DbSet<Account> Accounts { get; set; }
         public DbSet<Voucher> Vouchers { get; set; }
+        public DbSet<Category> Categorys { get; set; }
     }
 
 

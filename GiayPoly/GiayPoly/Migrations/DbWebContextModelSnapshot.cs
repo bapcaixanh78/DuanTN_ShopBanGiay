@@ -99,12 +99,6 @@ namespace GiayPoly.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("Brand")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int?>("Color")
-                        .HasColumnType("int");
-
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
 
@@ -116,6 +110,9 @@ namespace GiayPoly.Migrations
 
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("Oder")
+                        .HasColumnType("int");
 
                     b.Property<double?>("Price")
                         .HasColumnType("float");

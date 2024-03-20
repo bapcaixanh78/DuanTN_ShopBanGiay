@@ -41,12 +41,12 @@ export const getCategoriesByBrandId = baseURL + 'Categories/';
 //ProductAPI
 export const getAllProduct = baseURL + 'Product/GetList';
 export const getProductById = baseURL + 'Product/GetById';
+export const SetOderById = baseURL + 'Product/SetOderById';
 export const postProduct = baseURL + 'Product/Create';
 export const putProduct = baseURL + 'Product/Update?id=';
 export const putDelProduct = baseURL + 'Products/Delete?id=';
 export const deleteProduct = baseURL + 'Product/Delete?id=';
 export const uploadImge = baseURL + 'Product/UploadImg'
-
 //LoginAPI
 export const postLogin = baseURL + 'Account/Login';
 export const createAccount = baseURL + 'Account/createAcount';

@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
-import { createOder, getVoucherCode, host } from 'src/app/services';
+import { SetOderById, createOder, getVoucherCode, host } from 'src/app/services';
 import { AuthenService } from 'src/app/services/authen.service';
 
 @Component({
@@ -145,15 +145,16 @@ export class CartComponent implements OnInit {
    this.countCart = this.cart.length
   }
   onSubmit() {
-    debugger
     var arr = JSON.parse(this.ongetItem())
     var arrList = [];
+    var productID:any =[];
     for(var i of arr){
       var Obj = {
         "productName":i.name,
         "productID":i.id,
         "amountProduct":i.amountProduct
       };
+      productID.push({Id:i.id})
       arrList.push(Obj)
     }
     console.log(this.form.value)
@@ -165,11 +166,13 @@ export class CartComponent implements OnInit {
     var username = localStorage.getItem("User");
     this.form.controls['UserName'].setValue(username)
     this.http.post(createOder,this.form.value).subscribe((res: any) => {
-    
-      alert("cảm ơn bạn đã đặt hàng")
-        localStorage.removeItem("productlist")
-       
-        this.router.navigate(['/home'])
+        this.http.post(SetOderById,productID).subscribe(res =>{
+          alert("cảm ơn bạn đã đặt hàng")
+          localStorage.removeItem("productlist");
+          window.location.href = "/home";
+          debugger
+        })
+      
     })
     //  this.svOder.postOder(this.userForm.value).subscribe((res:OderModel)=>{
     //   alert("cảm ơn "+ res+" đã đặt hàng")
@@ -192,7 +195,11 @@ export class CartComponent implements OnInit {
         const targetDate = new Date(expiry);
         if (currentDate.getTime() > targetDate.getTime()) {
           this.voucherStatus = "Voucher Đã Hết Hạn"
-          this.voucherStatus = null;
+          this.voucherCode = null;
+        }
+        if(res.turnUseVoucher == 0){
+          this.voucherStatus = "Voucher Đã Hết Lượt Sử Dụng"
+          this.voucherCode = null;
         }
         else{
           this.voucherStatus = "Đã Áp Dụng Voucher giảm" + " " + res.valueVoucher + "%" ;
@@ -203,6 +210,10 @@ export class CartComponent implements OnInit {
 
         }
  
+      }
+      else{
+        this.voucherStatus = "Voucher Không Hợp Lệ"
+        this.voucherCode = null;
       }
     })
   }

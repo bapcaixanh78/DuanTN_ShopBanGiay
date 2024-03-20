@@ -55,10 +55,14 @@ export class DashboardPageComponent implements OnInit {
   ngOnInit(): void {
     this.admin.checkAdmin()
     this.getProduct();
+
   }
   getProduct(){
     this.http.get(getAllProduct).subscribe(res =>{
       this.data = res as any[];
+      if(this.codeTable == 5){
+        this.data.sort((a:any,b:any)=> b.oder - a.oder)
+      }
       console.log(this.data )
     })
   }
@@ -97,6 +101,7 @@ export class DashboardPageComponent implements OnInit {
   }
   changeTable(number:number){
     this.codeTable = number
+    this. getProduct();
   }
   changeFormatDate = (value: string) => {
     let newDate = new Date(value);
@@ -124,7 +129,9 @@ export class DashboardPageComponent implements OnInit {
         });
     }
   };
+  pageChangeEvent($event:any){
 
+  }
   onExport = () => {
     var options = {
       title: '',

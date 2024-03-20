@@ -50,9 +50,10 @@
               <select name="fm-company" id="fm-company" formControlName="role">
                 <!-- <option *ngFor="let brand of brands" [value]="brand.id">
                   {{ brand.name }}
-                </option> -->
-                <option value=2>Active</option>
-                <option value=-1>Lock</option>
+                </option> -->               
+                <option *ngIf="role == 0" [value]=1>Admin</option>
+                <option [value]=2 >User</option>
+                <option [value]=-1 >Lock</option>
               </select>
             </div>
           </div>
