@@ -1,6 +1,6 @@
 .add-dashboard {
   width: 520px;
-  height: 414px;
+  height: 500px;
   background-color: #fff;
   border-radius: 10px;
   position: absolute;
@@ -49,13 +49,20 @@ a.close-popup {
   font-size: 15px;
   user-select: none;
 }
+.size{
+  border:  1px solid gray;
+  height: 34px;
+    background: white;
+    width: 164px;
+    color: black;
+}
 .heading-delete {
   width: 380px;
   left: 30px;
 }
 form {
   width: 267px;
-  height: 315px;
+  height: 425px;
   position: absolute;
   left: calc(50% - 280px / 2);
   top: 58px;

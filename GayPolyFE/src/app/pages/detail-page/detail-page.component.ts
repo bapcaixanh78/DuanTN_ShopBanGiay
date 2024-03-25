@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute } from '@angular/router';
 import { DeleteModalComponent } from 'src/app/components/delete-modal/delete-modal.component';
@@ -26,6 +26,7 @@ interface Data {
 export class DetailPageComponent implements OnInit {
   datas: any;
   id: any;
+  searchName:any
   constructor(private route: ActivatedRoute, private http: HttpClient, private matDialog: MatDialog) { }
 
   ngOnInit() {

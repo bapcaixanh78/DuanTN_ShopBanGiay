@@ -1,6 +1,6 @@
 .add-dashboard {
   width: 520px;
-  height: 414px;
+  height:500px;
   background-color: #fff;
   border-radius: 10px;
   position: absolute;
@@ -15,7 +15,13 @@
   height: 120px;
   top: 200px;
 }
-
+.size{
+  border:  1px solid gray;
+  height: 34px;
+    background: white;
+    width: 164px;
+    color: black;
+}
 .escape-icon {
   position: absolute;
   left: 90%;
@@ -55,7 +61,7 @@ a.close-popup {
 }
 form {
   width: 267px;
-  height: 315px;
+  height: 425px;
   position: absolute;
   left: calc(50% - 280px / 2);
   top: 58px;

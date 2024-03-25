@@ -1,0 +1,44 @@
+<ng-container *ngIf="formStatus == true">
+    <div class="add-dashboard">
+        <div class="escape-icon">
+          <a  class="close-popup" (click)="closePopup()">&times;</a>
+        </div>
+        <div class="heading-add blue-color"></div>
+        <form [formGroup]=" form" (ngSubmit)="onSave()">
+          <div class="fm">
+            <div class="fm-name blue-color">
+              Tên Danh Mục<span class="fm-name-redstar"> *</span>
+            </div>
+            <div class="fm-input">
+              <input type="text" name="" id="name"  formControlName="Name" required />
+            </div>
+          </div>
+     
+
+          <div class="btn">
+            <button class="btn-detele" (click)="closePopup()">HUỶ</button>
+            <button type="submit" value="add" class="btn-add">Save</button>
+          </div>
+        </form>
+      </div>
+</ng-container>
+
+
+  <ng-container *ngIf="formStatus == false">
+    <div class="delete-dashboard">
+        <div class="escape-icon" style="cursor: pointer">
+          <a class="close-popup" (click)="closePopup()">&times;</a>
+        </div>
+        <div class="heading-delete blue-color">
+          BẠN CÓ CHẮC CHẮN MUỐN XOÁ SẢN PHẨM NÀY KHÔNG?
+        </div>
+        <div class="btn-btn-delete">
+          <button class="btn-update-perm" (click)="onDelete()">Xóa</button>
+          <!-- <button class="btn-detele-temp" (click)="onDeleteTmp()">
+            XOÁ TẠM THỜI
+          </button> -->
+        </div>
+      </div>
+      
+  </ng-container>
+

@@ -2,12 +2,11 @@
 using AutoMapper;
 using GiayPoly.DBcontext;
 using GiayPoly.Models;
+using GiayPoly.Services;
 using GiayPoly.ViewModels;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Net.Http.Headers;
-using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
 namespace GiayPoly.Controllers
 {
@@ -17,37 +16,37 @@ namespace GiayPoly.Controllers
     {
         private readonly DbWebContext _context;
         private readonly IMapper _mapper;
-        public ProductController(DbWebContext context , IMapper mapper)
+        private readonly IUploadService _uploadService;
+        private readonly IProductService _productService;
+        public ProductController(DbWebContext context , IMapper mapper, IUploadService uploadService, IProductService productService)
         {
             _context = context;
             _mapper = mapper;
+            _uploadService = uploadService;
+            _productService = productService;
         }
         [HttpGet]
         [Route("GetList")]
         public async Task<IActionResult> GetList(string? search)
         {
-            if(search != null)
+            var products = await _context.Products.ToListAsync() ;
+            if (products != null)
             {
+                return Ok(products);
+            }
+            else { return BadRequest(null); }
 
-            }
-            var listProduct = await _context.Products.ToListAsync();
-            if(listProduct != null)
-            {
-                return Ok(listProduct);
-            }
-            else { return Ok(null); }
         }
         [HttpGet]
         [Route("GetById")]
         public async Task<IActionResult> GetById(int id)
         {
-
-            var product = await _context.Products.FirstOrDefaultAsync(x => x.Id == id);
+            var product = await _productService.GetProductById(id);
             if (product != null)
             {
                 return Ok(product);
             }
-            else { return Ok(null); }
+            else { return BadRequest(null); }
         }
         [HttpPost]
         [Route("SetOderById")]
@@ -67,50 +66,37 @@ namespace GiayPoly.Controllers
             }
             catch (Exception ex)
             {
-                return BadRequest("Có lỗi xảy ra: " + ex.Message);
+                return BadRequest("Có lỗi xảy ra: ");
             }
         }
         [HttpPut]
         [Route("Update")]
         public async Task<IActionResult> Update(int id, ProductViewModel input)
         {
-            var product = await _context.Products.FirstOrDefaultAsync(x => x.Id == id);
+            var product = await _productService.UpdateProduct(id, input);
             if (product != null)
             {
-                _mapper.Map(input,product);
-                product.ImgSlug = "product";
-                _context.Update(product);
-                await _context.SaveChangesAsync(); 
                 return Ok(product);
             }
-            else { return Ok(null); }
+            else { return BadRequest(null); }
         }
         [HttpDelete]
         [Route("Delete")]
         public async Task<IActionResult> Delete(int id)
         {
-            var product = await _context.Products.FirstOrDefaultAsync(x => x.Id == id);
+            var product = await _productService.DeleteProduct(id);
             if (product != null)
             {
-                _context.Remove(product);
-                await _context.SaveChangesAsync();
-                return Ok(id);
+                return Ok(product);
             }
-            else { return Ok(null); }
+            else { return BadRequest(null); }
         }
         [HttpPost]
         [Route("Create")]
         public async Task<Product> Create(Product input)
         {
-            if (input== null)
-            {
-                return null;
-            }
-            input.ImgSlug = "product";
-             _context.Products.Add(input);
-            await _context.SaveChangesAsync();
-           
-            return input;
+            var product = await _productService.CreateProduct(input);
+            return product;
         }
         [HttpPost]
         [Route("UploadImg")]
@@ -131,6 +117,15 @@ namespace GiayPoly.Controllers
 
             }
             return Ok(new mess() { messenger = "true" });
+        }
+        [HttpPost]
+        [Route("UploadImgs")]
+        public async Task<IActionResult> UploadImageAsync(List<IFormFile> files)
+        {
+            bool isUpload = await _uploadService.UploadMultipleImagesAsync(files);
+            if (isUpload)
+                return Ok(new mess() { messenger = "true" });
+            return BadRequest(new mess() { messenger = "false" });
         }
     }
 

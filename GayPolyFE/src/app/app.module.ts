@@ -29,8 +29,15 @@ import { VoucherComponent } from './pages/voucher/voucher.component';
 import { ModalvoucherComponent } from './pages/voucher/modalvoucher/modalvoucher.component';
 import { AccountComponent } from './pages/account/account.component';
 import { ModalAccountComponent } from './pages/account/modal-account/modal-account.component';
-
-
+import { CategoryComponent } from './pages/category/category.component';
+import { ModalCategoryComponent } from './pages/category/modal-category/modal-category.component';
+import { CharOderComponent } from './pages/char-oder/char-oder.component';
+import { ChartsModule } from 'ng2-charts';
+import { DetailProductComponent } from './front-end/detail-product/detail-product.component';
+import { ProductDetailsComponent } from './pages/product-details/product-details.component';
+import { ModalDetailComponent } from './pages/product-details/modal-detail/modal-detail.component';
+import { ReviewComponent } from './pages/review/review.component';
+import { ModalReviewComponent } from './pages/review/modal-review/modal-review.component';
 
 
 @NgModule({
@@ -54,9 +61,18 @@ import { ModalAccountComponent } from './pages/account/modal-account/modal-accou
     VoucherComponent,
     ModalvoucherComponent,
     AccountComponent,
-    ModalAccountComponent
+    ModalAccountComponent,
+    CategoryComponent,
+    ModalCategoryComponent,
+    CharOderComponent,
+    DetailProductComponent,
+    ProductDetailsComponent,
+    ModalDetailComponent,
+    ReviewComponent,
+    ModalReviewComponent,
   ],
   imports: [
+    ChartsModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,

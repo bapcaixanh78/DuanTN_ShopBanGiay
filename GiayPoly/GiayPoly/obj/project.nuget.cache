@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "nN7faUQ22kEM1v7tV05AeVr1KeS0ks3fzVCqgTkSRZa3yBifKp4MplE+Gvmbr9+DESplFi9rWUe6gThBfHU7xg==",
+  "dgSpecHash": "tIB9fpZROETzkPpR1dPhH5l8Q7xlpgrJFqm1YzvGR7aQ6+/f3yiTcvIdiRPp2X0rbQKnnnKJLlf17Eekj0Bn8g==",
   "success": true,
-  "projectFilePath": "D:\\Công viêc\\Công Việc\\Giayoly\\Web giay\\GiayPoly\\GiayPoly\\GiayPoly.csproj",
+  "projectFilePath": "D:\\Công viêc\\Công Việc\\giaypoly\\Giayoly\\Web giay\\GiayPoly\\GiayPoly\\GiayPoly.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\VNT\\.nuget\\packages\\automapper\\13.0.1\\automapper.13.0.1.nupkg.sha512",
     "C:\\Users\\VNT\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
@@ -46,6 +46,7 @@
     "C:\\Users\\VNT\\.nuget\\packages\\microsoft.win32.registry\\5.0.0\\microsoft.win32.registry.5.0.0.nupkg.sha512",
     "C:\\Users\\VNT\\.nuget\\packages\\microsoft.win32.systemevents\\5.0.0\\microsoft.win32.systemevents.5.0.0.nupkg.sha512",
     "C:\\Users\\VNT\\.nuget\\packages\\mono.texttemplating\\2.2.1\\mono.texttemplating.2.2.1.nupkg.sha512",
+    "C:\\Users\\VNT\\.nuget\\packages\\newtonsoft.json\\7.0.1\\newtonsoft.json.7.0.1.nupkg.sha512",
     "C:\\Users\\VNT\\.nuget\\packages\\swashbuckle.aspnetcore\\6.5.0\\swashbuckle.aspnetcore.6.5.0.nupkg.sha512",
     "C:\\Users\\VNT\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.5.0\\swashbuckle.aspnetcore.swagger.6.5.0.nupkg.sha512",
     "C:\\Users\\VNT\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.5.0\\swashbuckle.aspnetcore.swaggergen.6.5.0.nupkg.sha512",
@@ -80,5 +81,16 @@
     "C:\\Users\\VNT\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512",
     "C:\\Users\\VNT\\.nuget\\packages\\system.windows.extensions\\5.0.0\\system.windows.extensions.5.0.0.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Newtonsoft.Json 7.0.1' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net7.0'. This package may not be fully compatible with your project.",
+      "libraryId": "Newtonsoft.Json",
+      "targetGraphs": [
+        "net7.0"
+      ]
+    }
+  ]
 }

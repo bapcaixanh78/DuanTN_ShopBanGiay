@@ -14,7 +14,7 @@ export class UserOderComponent implements OnInit {
      private http: HttpClient,
      private authen: AuthenService,
     ) { }
-  data:any
+  data:any[]=[]
   user:any
   ngOnInit(): void {
     this.user = this.authen.checkUser();
@@ -22,7 +22,7 @@ export class UserOderComponent implements OnInit {
   }
   getData(){
     this.http.get(getByEmail+this.user).subscribe((res:any) =>{
-        this.data = res
+        this.data = [res]
         console.log( this.data )
         this.data.forEach((e:any) => {
           e.listProduct = JSON.parse(e.listProduct);
@@ -30,6 +30,7 @@ export class UserOderComponent implements OnInit {
           e.listProduct.forEach((i:any) => {
             e.viewNameP += i.productName + ", "
           })
+          console.log(this.data)
         });
         console.log(this.data)
     })

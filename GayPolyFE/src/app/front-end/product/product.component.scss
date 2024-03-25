@@ -54,3 +54,23 @@
   .product-img{
     position: relative;
   }
+  .search-container{
+    margin-top: 132px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .range-container {
+    display: flex;
+    align-items: center;
+}
+.phantrang{
+  display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+
+#output {
+    font-size: 18px;
+}

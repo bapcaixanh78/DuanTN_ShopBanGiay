@@ -1,77 +1,115 @@
 <div class="wrapp">
-    <div class="header">
-      <header>
-        <div class="header-navbar">
-          <a href="index.html">HNShop</a>
-          <nav class="header-nav">
-            <ul class="header-list">
-              <li class="header-list--item">
-                <a routerLink="/fullpage">Trang Chủ</a>
-              </li>
-              <li class="header-list--item">
-                <a routerLink="/infor">Thời Trang</a>
-              </li>
-              <li class="header-list--item">
-                <a routerLink="/detail">Tin Tức</a>
-              </li>
-              <li class="header-list--item">
-                <a href="/fullpage/#contact">Về Chúng Tôi</a>
-              </li>
-              <li class="header-list--item">
-                <a href="/fullpage/#contact">Liên Hệ </a>
-              </li>
-              <li class="header-list--item">
-                <a routerLink="/fullpage/#contact">Kết Nối </a>
-              </li>
-            </ul>
-          </nav>
-          <div (click)="linkCart()" class="seach">
-            <!-- <form [formGroup]="seachForm" (ngSubmit)="onSeach()">
+  <div class="header">
+    <header>
+      <div class="header-navbar">
+        <a href="index.html">HNShop</a>
+        <nav class="header-nav">
+          <ul class="header-list">
+            <li class="header-list--item">
+              <a routerLink="/fullpage">Trang Chủ</a>
+            </li>
+            <li class="header-list--item">
+              <a routerLink="/infor">Thời Trang</a>
+            </li>
+            <li class="header-list--item">
+              <a routerLink="/detail">Tin Tức</a>
+            </li>
+            <li class="header-list--item">
+              <a href="/fullpage/#contact">Về Chúng Tôi</a>
+            </li>
+            <li class="header-list--item">
+              <a href="/fullpage/#contact">Liên Hệ </a>
+            </li>
+            <li class="header-list--item">
+              <a routerLink="/fullpage/#contact">Kết Nối </a>
+            </li>
+          </ul>
+        </nav>
+        <div (click)="linkCart()" class="seach">
+          <!-- <form [formGroup]="seachForm" (ngSubmit)="onSeach()">
               <input id="seach-input" type="text" formControlName="name" />
             </form> -->
-            <!-- Button trigger modal -->
-            <a type="button"  data-bs-toggle="modal" data-bs-target="#exampleModal">
-              <span style="display: flex;"><img src="./assets/image/Screenshot 2022-05-21 001617.png" alt="" />
-              <div *ngIf="countCart > 0" class="soluongsanpham"><p >{{countCart}}</p></div></span>
-            </a>
-          </div>
-        </div>
-      </header>
-    </div>
-    <div class="container-chitietsanpham">
-      <div class="container-chitietsanpham-item">
-        <div >
-            <ng-container *ngFor="let product of productList">
-                <div class="container-item">
-                    <!-- ----------1sanpham---------------- -->
-                   
-                    <div class="item-image" >
-                      <a href="/infor/{{ product.id }}">
-                        <img src="{{host}}/media/{{product .imgSlug}}/{{product .image}}" />
-                      </a>
-                    </div>
-                    <div class="ifor-item">
-                      <ul>
-                        <li style="font-size: 25px">
-                          <p>{{ product.name }}</p>
-                        </li>
-                        <li style="font-size: 20px; color: gray">
-                          <p>{{ product.price}}VND</p>
-                        </li>
-                      </ul>
-                      <ul>
-                        <button  class="button-add" (click)="addcart(product.id)" >Mua Hàng</button>
-                        <!-- <button routerLink="/user" class="button-add">Mua Hàng</button> -->
-                        <!-- <button (click)="addcart(product.id)" class="button-add">Mua Hàng</button> -->
-                      </ul>
-                    </div>
-                  </div>
-            </ng-container>
-        
+          <!-- Button trigger modal -->
+          <a type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            <span style="display: flex;"><img src="./assets/image/Screenshot 2022-05-21 001617.png" alt="" />
+              <div *ngIf="countCart > 0" class="soluongsanpham">
+                <p>{{countCart}}</p>
+              </div>
+            </span>
+          </a>
         </div>
       </div>
-    </div>
+    </header>
   </div>
-  
-  
+  <div class="container-chitietsanpham">
+    <div class="container-chitietsanpham-item">
+      <div class="phantrang">
+      <div class="search-container">
+        <input type="text" [(ngModel)]="searchName" id="searchInput" placeholder="Search for products...">
+        <select  [(ngModel)]="searchSelect" id="priceRange">
+          <option value="1">Lọc Giá Từ Thấp Đến Cao </option>
+          <option value="2">Lọc Giá Từ Cao Đến Thấp </option>
+        </select>
+        <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle btn-hn"   type="button" id="dropdownMenuButton1"
+            data-bs-toggle="dropdown" aria-expanded="false">
+            Lọc Theo Khoảng Giá
+          </button>
+          <ul class="dropdown-menu " aria-labelledby="dropdownMenuButton1">
+            <div class="range-container">
+              <span id="output">0</span>
+              <input type="range" min="0" max="2000000"  (change)="changeValue($event)" [(ngModel)]="rangValue" id="priceRange">
+              <span id="output">2000000</span>
+             
+            </div>
+            Giá lọc {{rangValue}}
+          </ul>
+        </div>
+        <button class="btn btn-secondary btn-hn" type="button" (click)="serachFilter()" >
+          Lọc
+      </button>
+      <button class="btn btn-secondary btn-hn" type="button" (click)="reset()" >
+        reset
+    </button>
+      </div>
+      <div>
+        <ng-container *ngFor="let product of productList  | paginate: config">
 
+          <div class="container-item">
+
+            <!-- ----------1sanpham---------------- -->
+
+            <div class="item-image">
+              <a href="/detail-product/{{ product.id }}">
+                <img src="{{host}}/media/{{product .imgSlug}}/{{product .image}}" />
+              </a>
+            </div>
+            <div class="ifor-item">
+              <ul>
+                <li style="font-size: 25px">
+                  <p>{{ product.name }}</p>
+                </li>
+                <li style="font-size: 20px; color: gray">
+                  <p>{{ product.price}}VND</p>
+                </li>
+              </ul>
+              <ul>
+                <button class="button-add" (click)="addcart(product.id)">Mua Hàng</button>
+                <!-- <button routerLink="/user" class="button-add">Mua Hàng</button> -->
+                <!-- <button (click)="addcart(product.id)" class="button-add">Mua Hàng</button> -->
+              </ul>
+            </div>
+          </div>
+        </ng-container>
+
+      </div>
+      <div style="margin-top: 50px;">
+        <pagination-controls [previousLabel]="'Last'" [nextLabel]="'Next'" (pageChange)="pageChangeEvent($event)"></pagination-controls>
+      </div>
+   
+    </div>
+    </div>
+  
+  </div>
+
+</div>

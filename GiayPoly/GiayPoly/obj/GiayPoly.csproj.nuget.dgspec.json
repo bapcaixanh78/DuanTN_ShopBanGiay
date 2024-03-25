@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Công viêc\\Công Việc\\Giayoly\\Web giay\\GiayPoly\\GiayPoly\\GiayPoly.csproj": {}
+    "D:\\Công viêc\\Công Việc\\giaypoly\\Giayoly\\Web giay\\GiayPoly\\GiayPoly\\GiayPoly.csproj": {}
   },
   "projects": {
-    "D:\\Công viêc\\Công Việc\\Giayoly\\Web giay\\GiayPoly\\GiayPoly\\GiayPoly.csproj": {
+    "D:\\Công viêc\\Công Việc\\giaypoly\\Giayoly\\Web giay\\GiayPoly\\GiayPoly\\GiayPoly.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Công viêc\\Công Việc\\Giayoly\\Web giay\\GiayPoly\\GiayPoly\\GiayPoly.csproj",
+        "projectUniqueName": "D:\\Công viêc\\Công Việc\\giaypoly\\Giayoly\\Web giay\\GiayPoly\\GiayPoly\\GiayPoly.csproj",
         "projectName": "GiayPoly",
-        "projectPath": "D:\\Công viêc\\Công Việc\\Giayoly\\Web giay\\GiayPoly\\GiayPoly\\GiayPoly.csproj",
+        "projectPath": "D:\\Công viêc\\Công Việc\\giaypoly\\Giayoly\\Web giay\\GiayPoly\\GiayPoly\\GiayPoly.csproj",
         "packagesPath": "C:\\Users\\VNT\\.nuget\\packages\\",
-        "outputPath": "D:\\Công viêc\\Công Việc\\Giayoly\\Web giay\\GiayPoly\\GiayPoly\\obj\\",
+        "outputPath": "D:\\Công viêc\\Công Việc\\giaypoly\\Giayoly\\Web giay\\GiayPoly\\GiayPoly\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -70,6 +70,10 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[7.0.10, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[7.0.1, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",

@@ -12,11 +12,14 @@ namespace GiayPoly.DBcontext
             _configuration = configuration;
 
         }
-         public DbSet<Oder> Oders{ get; set; }
+        public DbSet<Oder> Oders{ get; set; }
         public DbSet<Product> Products { get; set; }
+        public DbSet<Comment> Comments { get; set; }
         public DbSet<Account> Accounts { get; set; }
         public DbSet<Voucher> Vouchers { get; set; }
         public DbSet<Category> Categorys { get; set; }
+
+        public DbSet<DetailProduct> DetailProducts { get; set; }    
     }
 
 

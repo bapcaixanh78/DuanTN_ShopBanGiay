@@ -1,9 +1,12 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
-import { SetOderById, createOder, getVoucherCode, host } from 'src/app/services';
+import html2canvas from 'html2canvas';
+import jsPDF from 'jspdf';
+import { GetByEmail, SetOderById, createOder, getVoucherCode, host } from 'src/app/services';
 import { AuthenService } from 'src/app/services/authen.service';
+
 
 @Component({
   selector: 'app-cart',
@@ -17,6 +20,8 @@ export class CartComponent implements OnInit {
     private router: Router,
     private  authen : AuthenService
   ) { }
+  @ViewChild('content') content: ElementRef;
+  checkout:any = false;
   host = host;
   products: any;
   cart : any=[];
@@ -27,6 +32,7 @@ export class CartComponent implements OnInit {
   countCart: number = 0;
   arrDeleted : any =[];
   data:any;
+  user:any;
   voucherCode:any;
   voucherStatus:any ="";
   form = new FormBuilder().group({
@@ -42,6 +48,10 @@ export class CartComponent implements OnInit {
   });
   ngOnInit(): void {
     this.authen.checkUser();
+    var emailuser = localStorage.getItem("User")
+    this.http.get(GetByEmail + emailuser).subscribe(res =>{
+      this.user = res
+    })
     this.data = localStorage.getItem("productlist")
     this.cart = JSON.parse(this.data);
     this.countCart = this.cart.length; 
@@ -148,6 +158,7 @@ export class CartComponent implements OnInit {
     var arr = JSON.parse(this.ongetItem())
     var arrList = [];
     var productID:any =[];
+    var stringD = ""
     for(var i of arr){
       var Obj = {
         "productName":i.name,
@@ -156,8 +167,8 @@ export class CartComponent implements OnInit {
       };
       productID.push({Id:i.id})
       arrList.push(Obj)
-    }
-    console.log(this.form.value)
+      stringD += `sản phẩm ${i.name} size ${i.size}` 
+    } this.form.controls['Description'].setValue(stringD )
     if(this.voucherCode != null){
       this.form.controls['VoucherCode'].setValue(this.voucherCode)
     }
@@ -170,7 +181,6 @@ export class CartComponent implements OnInit {
           alert("cảm ơn bạn đã đặt hàng")
           localStorage.removeItem("productlist");
           window.location.href = "/home";
-          debugger
         })
       
     })
@@ -216,6 +226,19 @@ export class CartComponent implements OnInit {
         this.voucherCode = null;
       }
     })
+  }
+  onExport(){
+     const doc = new jsPDF();
+
+    // Chụp nội dung HTML bằng html2canvas
+    html2canvas(this.content.nativeElement).then((canvas) => {
+      // Lấy dữ liệu hình ảnh từ canvas
+      const imgData = canvas.toDataURL('image/png');
+
+      // Thêm hình ảnh vào tài liệu PDF
+      doc.addImage(imgData, 'PNG', 0, 0, 210, 50);
+      doc.save('document.pdf');
+    });
   }
 
 }

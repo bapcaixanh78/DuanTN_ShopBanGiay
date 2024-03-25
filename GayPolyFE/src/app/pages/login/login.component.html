@@ -41,22 +41,42 @@
   </form>
 </ng-container>
 <ng-container *ngIf="statusForm=='quenmatkhau'">
-  <form class="login__form form-signin" [formGroup]="loginForm" (ngSubmit)="onSubmit()" #signInForm="ngForm">
+  <form class="login__form form-signin" >
     <h2 class="login__heading">Quên Mật Khẩu</h2>
 
     <label for="inputlogin" class="login__label">Nhập Email Đăng Nhập</label>
-    <input type="text" class="login__input" id="inputLogin" formControlName="Email" ngModel required autofocus>
+    <input type="text" class="login__input" id="inputLogin" [(ngModel)]="sendMailto"o name="sendMailto">
 
     <label for="inputPassword" class="login__label">Nhập Mã OTP</label>
     <span>
-      <input type="text" class="login__input" id="inputPassword" formControlName="Password" autocomplete="on" ngModel
-      required>
-      <button class="login__button" type="submit">Xác Nhận</button>
+      <input type="number" class="login__input" id="inputPassword" [(ngModel)]="codeResetForm" name="codereset" >
+      <button class="login__button" (click)="sendEmail()" >Gửi Mã</button>
+    
     </span>
 
+    {{ sendMailStatus}}
+ 
+    <button class="login__button" type="submit" (click)="checkCode()" >Xác Nhận</button>
 
-    <button class="login__button" type="submit" (click)="sendEmail()" >Gửi Mã</button>
+    <a  style="cursor: pointer;" (click)="statusForm='login'" >Đăng Nhập</a>
+  </form>
+</ng-container>
 
+<ng-container *ngIf="statusForm=='rsmatkhau'">
+  <form class="login__form form-signin" >
+    <h2 class="login__heading">Đặt Lại Mật Khẩu</h2>
+    <span>
+      <div>
+      Mật Khẩu Mới   <input type="password" class="login__input" id="inputPassword" [(ngModel)]="passwordReset" name="passwordeset" >
+
+      </div>
+      <div>
+      Xác Nhận Mật Khẩu <input type="password" class="login__input" id="inputPassword" [(ngModel)]="passwordResetConfom" name="passwordResetConfom" >
+        
+      </div>
+      <button class="login__button" (click)="resetMK()" >Đổi Mật Khẩu</button>
+    
+    </span>
     <a  style="cursor: pointer;" (click)="statusForm='login'" >Đăng Nhập</a>
   </form>
 </ng-container>

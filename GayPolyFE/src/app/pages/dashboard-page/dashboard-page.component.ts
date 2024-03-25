@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { AngularCsv } from 'angular-csv-ext/dist/Angular-csv';
-import { getDateString, getAllProduct, host, getProductById } from 'src/app/services';
+import { getDateString, getAllProduct, host, getProductById, categoryGet, productDetaiGet } from 'src/app/services';
 import { UpdateModalComponent } from './../../components/update-modal/update-modal.component';
 import { DeleteModalComponent } from './../../components/delete-modal/delete-modal.component';
 import { ModalAddComponent } from './../../components/modal-add/modal-add.component';
@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { ToastrService } from 'ngx-toastr';
 import { AuthenService } from 'src/app/services/authen.service';
+import { ModalDetailComponent } from '../product-details/modal-detail/modal-detail.component';
 
 interface defineDataCsv {
   name: string;
@@ -23,7 +24,7 @@ interface defineDataCsv {
   styleUrls: ['./dashboard-page.component.scss'],
 })
 export class DashboardPageComponent implements OnInit {
-  codeTable:number = 3;
+  codeTable:number = 1;
   search = '';
   host = host;
   message = '';
@@ -38,6 +39,13 @@ export class DashboardPageComponent implements OnInit {
   dataTmp: any[] = [];
   exportResult: defineDataCsv[] = [];
   resResult: any[] = [];
+  category:any=[];
+  detailP:any;
+  rangValue :any ;
+  searchName:any ;
+  searchSelect:any;
+  remember :any ;
+  input :number ;
   constructor(
     private http: HttpClient,
     private matDialog: MatDialog,
@@ -57,45 +65,47 @@ export class DashboardPageComponent implements OnInit {
     this.getProduct();
 
   }
+  GetDetail(id:any){
+    this.input = id
+    this.codeTable = 8;
+  }
   getProduct(){
     this.http.get(getAllProduct).subscribe(res =>{
       this.data = res as any[];
+      this.remember =  this.data ;
       if(this.codeTable == 5){
         this.data.sort((a:any,b:any)=> b.oder - a.oder)
       }
+      this.http.get(categoryGet).subscribe(res =>{
+        this.category = res;
+      })
+      this.http.get(productDetaiGet).subscribe((res:any) =>{
+        console.log( res)
+          this.detailP = res
+      })
+     
       console.log(this.data )
     })
   }
   pageChanged(event: any) {
     this.config.currentPage = event;
   }
+ 
+  onSize(){
+    const dialogRef = this.matDialog.open(ModalDetailComponent);
 
-  onSearch = (search: string) => {
-    if (search !== '') {
-      this.suggestion = this.initialSuggestion.filter((option) =>
-        option.toLowerCase().includes(search.trim().toLowerCase())
-      );
-      return;
-    }
-
-    this.http
-      .get(getAllProduct, {
-        headers: {
-          Authorization: 'Bearer ' + localStorage.getItem('token'),
-        },
-      })
-      .subscribe((res) => {
-        this.resResult = [res];
-        this.data = this.resResult[0].items;
-
-        this.valueSortDate = 1;
-        this.data = this.onDateSort();
-        this.suggestion = [];
-
-        this.config.totalItems = this.data.length;
-        this.config.currentPage = 1;
-      });
-  };
+    dialogRef.afterClosed().subscribe((result) => {
+      console.log('day la thong bao' + JSON.stringify(result.message));
+      this.message = result.message;
+      if (result.isError) {
+        this.toastr.error(this.message);
+      }
+      else {
+        this.toastr.success(this.message);
+      }
+      this.getProduct()
+    });
+  }
   Logout(){
     this.admin.Logout()
   }
@@ -103,13 +113,39 @@ export class DashboardPageComponent implements OnInit {
     this.codeTable = number
     this. getProduct();
   }
+  serachFilter(){
+    // rangValue :any ;
+    // searchName:any ;
+    // searchSelect:any;
+    if(this.searchName != undefined){
+      this.data =  this.data.filter(x => x.name.includes(this.searchName))
+    }
+    console.log(this.data)
+
+    if(this.searchSelect != undefined){
+      if(this.searchSelect == "1"){
+      this.data.sort((a:any,b:any) => a.price - b.price)
+      }
+      if(this.searchSelect == "2"){
+      this.data.sort((a, b) => b.price - a.price)
+      }
+    }
+    if(this.rangValue != undefined ){
+      this.data=  this.data.filter(x => x.price > 0 && x.price <= this.rangValue)
+    }
+  }
+  reset(){
+    this.data = this.remember;
+  }
   changeFormatDate = (value: string) => {
     let newDate = new Date(value);
     // console.log(newDate.toLocaleString());
     return getDateString(newDate.toLocaleString());
     // return value
   };
-
+  changeValue(event:any){
+    console.log(event.target.value)
+  }
   onKeyPress = (key: any, search: string) => {
     if (key.keyCode === 13) {
       this.search = search;
@@ -129,8 +165,8 @@ export class DashboardPageComponent implements OnInit {
         });
     }
   };
-  pageChangeEvent($event:any){
-
+  pageChangeEvent(event:any){
+    this.config.currentPage= event
   }
   onExport = () => {
     var options = {

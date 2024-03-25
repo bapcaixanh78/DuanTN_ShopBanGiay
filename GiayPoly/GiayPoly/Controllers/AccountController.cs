@@ -31,7 +31,7 @@ namespace GiayPoly.Controllers
 
             if (user == null)
             {
-                return BadRequest("Khong co ten nguoi dung nay !");
+                return Ok(null);
             }
 
             return Ok(user);
@@ -57,6 +57,33 @@ namespace GiayPoly.Controllers
             var data = await _context.Accounts.FirstOrDefaultAsync(x => x.Id == id);
             if (data != null)
             {
+                return Ok(data);
+            }
+            else { return Ok(null); }
+        }
+        [HttpGet]
+        [Route("GetByEmail")]
+        public async Task<IActionResult> GetByEmail(string email)
+        {
+
+            var data = await _context.Accounts.FirstOrDefaultAsync(x => x.Email == email);
+            if (data != null)
+            {
+                return Ok(data);
+            }
+            else { return Ok(null); }
+        }
+        [HttpPost]
+        [Route("resetPass")]
+        public async Task<IActionResult> ResetPass(Login input)
+        {
+
+            var data = await _context.Accounts.FirstOrDefaultAsync(x => x.Email == input.Email);
+            if (data != null)
+            {
+                data.Password = input.Password;
+                _context.Update(data);
+                await _context.SaveChangesAsync();
                 return Ok(data);
             }
             else { return Ok(null); }
@@ -106,7 +133,7 @@ namespace GiayPoly.Controllers
         [Route("createAcount")]
         public async Task<IActionResult> createAcount(Account data)
         {
-            var user = await _context.Accounts.FirstOrDefaultAsync(x => x.Email == data.Email);
+            var user = await _context.Accounts.FirstOrDefaultAsync(x => x.Email == data.Email || x.PhoneNumber == data.PhoneNumber);
 
             if (user == null)
             {

@@ -47,6 +47,7 @@ export const putProduct = baseURL + 'Product/Update?id=';
 export const putDelProduct = baseURL + 'Products/Delete?id=';
 export const deleteProduct = baseURL + 'Product/Delete?id=';
 export const uploadImge = baseURL + 'Product/UploadImg'
+export const uploadGalery = baseURL + 'Product/UploadImgs'
 //LoginAPI
 export const postLogin = baseURL + 'Account/Login';
 export const createAccount = baseURL + 'Account/createAcount';
@@ -56,7 +57,10 @@ export const lockAccount = baseURL + 'Account/Lock?id=';
 export const deleteUser= baseURL + 'Account/Delete?id=';
 export const UpdateAccount = baseURL + 'Account/Update?id=';
 export const getUserName = baseURL + 'Users/name';
+export const GetByEmail = baseURL + 'Account/GetByEmail?email=';
+export const ResetPass = baseURL + 'Account/ResetPass';
 
+export const emailservice ='http://servicemail.somee.com/SendMailService/SendMail';
 //oderApi
 export const getOder = baseURL + 'Oder/GetList';
 export const getOderId = baseURL + 'Oder/GetById';
@@ -73,3 +77,30 @@ export const createVoucher = baseURL + 'Voucher/Create';
 export const updateVoucher = baseURL + 'Voucher/Update?id=';
 export const getVoucherCode = baseURL + 'Voucher/GetByCode?code=';
 export const deleteVoucher = baseURL + 'Voucher/Delete?id=';
+
+//category
+export const categoryGet = baseURL + 'Category/GetList';
+export const categoryGetById= baseURL + 'Category/GetById';
+export const updateCategory= baseURL + 'Category/Update?id=';
+export const createCategory = baseURL + 'Category/Create';
+export const deleteCategory = baseURL + 'Category/Delete?id=';
+
+//category
+export const productDetaiCreate = baseURL + 'ProductDetail/Create';
+export const productDetaiGet = baseURL + 'ProductDetail/GetList';
+export const productDetaiUpdate = baseURL + 'ProductDetail/Update?id=';
+export const productDetaiDelete= baseURL + 'ProductDetail/Delete?id=';
+export const productGetById= baseURL + 'ProductDetail/GetById';
+// export const categoryGetById= baseURL + 'Category/GetById';
+// export const updateCategory= baseURL + 'Category/Update?id=';
+// export const createCategory = baseURL + 'Category/Create';
+// export const deleteCategory = baseURL + 'Category/Delete?id=';
+
+// CommentAPI
+export const commentGet = baseURL + 'Comment/GetList';
+export const commentGetById = baseURL + 'Comment/GetById';
+export const commentCreate = baseURL + 'Comment/Create';
+export const commentUpdate = baseURL + 'Comment/Update?id=';
+export const commentDelete = baseURL + 'Comment/Delete?id=';
+export const commentGetByEmail = baseURL + 'Comment/GetByEmail';
+export const commentGetByProductId = baseURL + 'Comment/GetByProductId';

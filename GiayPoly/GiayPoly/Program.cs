@@ -1,6 +1,6 @@
 using GiayPoly.AutoMap;
 using GiayPoly.DBcontext;
-using Microsoft.AspNetCore.Hosting;
+using GiayPoly.Services;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -17,7 +17,9 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddAutoMapper(typeof(AutoMapService));
-
+builder.Services.AddScoped<IProductService, ProductService>();
+builder.Services.AddScoped<IUploadService, UploadService>();
+builder.Services.AddScoped<IOrderService, OrderService>();
 builder.Services.AddCors(options =>
 {
     options.AddPolicy(name: "Policy",

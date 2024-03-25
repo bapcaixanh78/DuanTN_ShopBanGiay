@@ -1,5 +1,5 @@
 import { Router } from '@angular/router';
-import { getAllProduct, postProduct, uploadImge } from './../../services/index';
+import { categoryGet, getAllProduct, postProduct, productDetaiGet, uploadGalery, uploadImge } from './../../services/index';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { HttpClient } from '@angular/common/http';
@@ -28,6 +28,9 @@ export class ModalAddComponent implements OnInit {
   message = '';
   cateId: any;
   files:any;
+  listFile:any;
+  detailP:any = [];
+  listIdDetail:any =[];
   constructor(
     private http: HttpClient,
     private matdialog: MatDialog,
@@ -45,6 +48,9 @@ export class ModalAddComponent implements OnInit {
       VoucherCode: [""],
       Sale: [0],
       Oder: [0],
+      Gallery : [''],
+      ListProductDetailId:[""],
+      DetailProduct:null
     });
   }
   // public string? Name { get; set; }
@@ -57,19 +63,61 @@ export class ModalAddComponent implements OnInit {
   // public string? VoucherCode { get; set; }
   // public int? sale { get; set; }
   ngOnInit() {
- 
+    this.http.get(categoryGet).subscribe(res=>{
+      this.categories = res;
+    })
+    this.http.get(productDetaiGet).subscribe((res:any) =>{
+        res.forEach((x:any) => {
+          if(x.productId == 0){
+            this.detailP.push(x)
+          }
+        })
+    })
   }
 
-  
+  setDetail(size:any){
+    if(this.listIdDetail.findIndex((x:any) => x.id ==size.id) == -1){
+      this.listIdDetail.push(size)
+      console.log(this.listIdDetail,"ok")
+    }
+    else{
+      alert('ko được trùng size')
+    }
+  }
+  setListProductDetailId(){
+    if(this.listIdDetail.length > 0){
+      for(var i = 0 ; i < this.listIdDetail.length  ; i++){
+        debugger
+        var numberDefaut = this.listIdDetail.length -1;
+        if(i == numberDefaut){
+          this.addForm.value.ListProductDetailId += this.listIdDetail[i].id
+        }
+        else{
+          this.addForm.value.ListProductDetailId += (this.listIdDetail[i].id + ',')
+        }
+      }
+    }
+    else{
+      alert('vui lòng chọn size')
+      return;
+    }
+  }
   onAdd = () => {
+    this.setListProductDetailId()
     this.addForm.value.Image = this.files.Type;
+    var fomgalery = this.uploadFiles();
+    console.log(this.addForm.value)
     this.http.post(postProduct,this.addForm.value).subscribe(res =>{
       if(res != null){
+       
         const formdata:FormData =new FormData();
         var file :File = this.files.File;
         formdata.append('upload',file, this.files.Type)
         this.http.post(uploadImge,formdata).subscribe((res:any) =>{
           if(res.messenger == "true"){
+            this.http.post(uploadGalery,fomgalery).subscribe(res=>{
+
+            });
             this.closePopup(false,"Tạo Mới Sản Phẩm Thành Công !")
           }
           else{
@@ -84,7 +132,20 @@ export class ModalAddComponent implements OnInit {
 
 
   };
- 
+  uploadFiles() {
+    
+    var files = this.listFile;
+    const formData = new FormData();
+  
+    for (let i = 0; i < 3; i++) {
+      var name = formatDate(new Date(), 'yyyyMMddhhmmsssss', 'en')+files[i].name +".png"
+        formData.append('files', files[i],  name);
+        this.addForm.value.Gallery += name  + ","
+    }
+    return formData
+  
+}
+
   getImgValue(event:any){
     this.files = {
       Type:"",
@@ -96,6 +157,10 @@ export class ModalAddComponent implements OnInit {
     this.files.Name = formatDate(new Date(), 'yyyyMMddhhmmsssss', 'en')
     this.files.Type = this.files.Name +".png"
     console.log(this.files)
+  }
+  getImgListValue(event:any){
+    this.listFile = event.target.files;
+    console.log(this.listFile)
   }
   onBrandChange = (id: any) => {
     // console.log(this.addForm.get('brand'))

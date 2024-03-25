@@ -50,20 +50,21 @@
     <div class="table-responsive">
         <table class="table table-striped">
           <tbody>
-            <tr>
-                  <th class="dashboard__table--col--item3">Mã Đơn Hàng</th>
+            <tr> 
+              <th class="dashboard__table--col--item3">Danh Sách Sản Phẩm</th>
                   <th class="dashboard__table--col--item3">Giá Đơn Hàng</th>
                   <th class="dashboard__table--col--item3">Ngày Đặt Hàng</th>
                   <th class="dashboard__table--col--item3">Ghi Chú</th>
-                  <th class="dashboard__table--col--item3">Danh Sách Sản Phẩm</th>
+                 
                   <th class="dashboard__table--col--item3">Trạng Thái Đơn Hàng</th>
             </tr>
             <tr *ngFor="let item of data let i = index">
-                  <td>{{item.id}}</td>
+                  <!-- <td>{{item.id}}</td> -->
+                  <td>{{item.viewNameP}}</td>
                   <td>{{ item.priceOder}}</td> 
                   <td>{{ item.dayOder}}</td> 
                   <td>{{item.description}}</td>
-                  <td>{{item.viewNameP}}</td>
+                 
                   <td *ngIf="item.status == 0">Chờ Xác Nhận</td>
                   <td *ngIf="item.status == 1">Đã Hoàn Thành</td>
               <td>

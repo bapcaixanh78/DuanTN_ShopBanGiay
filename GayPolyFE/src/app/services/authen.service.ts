@@ -20,8 +20,11 @@ export class AuthenService {
     } 
   }
   checkUser(){
-    if(localStorage.getItem('User')!=null){
+    if(localStorage.getItem('User')!=null ){
       return localStorage.getItem('User')
+    }
+    if(localStorage.getItem('Admin') != null){
+      return localStorage.getItem('Admin')
     }
     else{
       this.router.navigate(['/login']);

@@ -46,24 +46,11 @@
     </header>
   </div>
 
-<div class="container" style="min-height: 800px; margin-top: 140px;">
+<div class="container" *ngIf="checkout == false" style="min-height: 800px; margin-top: 140px;">
     <div class="table-responsive">
         <table class="table table-striped">
-          <tbody>
-            <tr>
-              <!-- <th scope="col">
-                        <div class="custom-checkbox custom-control">
-                            <input type="checkbox" class="custom-control-input" id="ckkAll">
-                            <label class="custom-control-label" for="ckkAll"></label>
-                        </div>
-                    </th> -->
-              <th scope="col">Tên sản phẩm</th>
-              <th scope="col">Hình ảnh </th>
-              <th scope="col">Giá sản phẩm </th>
-              <th scope="col">Số Lượng </th>
-            </tr>
-            <tr *ngFor="let product of cart let i = index">
-              <td>{{product.name}}</td>
+            <div *ngFor="let product of cart let i = index">
+              <div>Tên Sản Phẩm :  {{product.name}}</div>
               <td id="{{product.id}}" class="product-img" (click)="onAddDelete(product.id)">
                 <!-- <img [src]="createImgUrl(product.img)" style="width: 80px; height: 80px" /> -->
                 <img  src="{{host}}/media/product/{{product.image}}"
@@ -76,8 +63,7 @@
                  <span class="amountproduct" >{{product.amountProduct}}</span>
                 <button class="price" (click)="onPrice(product.id , 2)">+</button>
               </td>
-            </tr>
-          </tbody>
+            </div>
         </table>
       </div>
       <div class="pricesum"> 
@@ -92,9 +78,100 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-danger"  (click)="onDeleteAll()">Hủy Bỏ</button>
-        <a type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-primary btn-hn">Thanh Toán</a>
+        <!-- <a type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-primary btn-hn">Thanh Toán</a> -->
+        <button (click)="checkout = true" >Thanh Toán</button>
       </div>
 </div>
+
+
+<section *ngIf="checkout == true" class="section-space">
+  <div class="container">
+      <strong> Xác Nhận Thanh Toán Đơn Hàng</strong>
+    <div class="row product-details">
+      <div class="col-lg-5">
+        <div class="product-details-collection mb-0"> 
+        </div>
+        <div class="product-details-collection mb-0">
+          <div class="container-user">
+            <div class="model-update">
+              <form class="userform" [formGroup]="form" >
+                <div class="formgruop">
+                  <label class="form-label">Họ Và Tên</label>
+                  <input type="text" class="form-control" [value]="this.user.userName">
+                </div>
+                <div class="formgruop">
+                  <label class="form-label">Email</label>
+                  <input type="text" class="form-control"  [value]="this.user.email">
+                </div>
+                <div class="formgruop">
+                  <label class="form-label">Số Điện Thoại</label>
+                  <input type="text" class="form-control" [value]="this.user.phoneNumber">
+                </div>
+                <div class="formgruop">
+                  <label class="form-label">Địa Chỉ</label>
+                  <input type="text" class="form-control" formControlName="Address" placeholder="Vui Lòng Nhập Địa Chỉ">
+                </div>
+
+              </form>
+              <button type="submit" (click)="onSubmit()" class="btn btn-primary btn-hn">Thanh Toán</button >
+            </div>
+        
+        </div>
+        
+      </div>
+    </div>
+      <div class="col-lg-6 mt-2 mt-lg-0">
+        <div class="product-details-content product-item">
+
+          <div class="product-details-title" style="font-size: 20px;"> <strong></strong>
+          </div>
+      
+          <div id="hoadon" class="justify-content-between align-items-center mb-2 hoa-don" style="margin-top: 10px;">
+            <div class="product-details-collection mb-0">
+             
+              </div>
+              <div #content class="product-details-collection mb-0" style="margin-top: 20px;">
+       
+                <table class="table">
+            
+                  <thead>
+                    <tr>
+                      <th scope="col">Tên Sản Phẩm</th>
+                      <th scope="col">Số Lượng</th>
+                      <th scope="col">Đơn Giá </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let product of cart let i = index">
+                      <th >{{product.name}}</th>
+                      <td>{{product.name}}</td>
+                      <td>{{product.price}} VNĐ</td>
+                    </tr>
+
+                  </tbody>
+                </table>
+                <strong>Tổng Giá Trị Hóa Đơn : {{priceSum}}</strong>
+                     
+              </div>
+              <button class="btn-primary btn-hn" (click)="onExport()">Xuất Hóa Đơn</button>
+          </div>
+        </div>
+      </div>
+
+  </div>
+</div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
 <section class="footer" id="footer">
   <div class="container-lienhe">
     <p style="margin-top: 30px">Giay Poly</p>
@@ -121,7 +198,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-danger" data-bs-dismiss="modal" aria-label="Close">Hủy Bỏ</button>
-        <button type="submit" (click)="onSubmit()" class="btn btn-primary btn-hn">Thanh Toán</button >
+  
       </div>
     </div>
   </div>

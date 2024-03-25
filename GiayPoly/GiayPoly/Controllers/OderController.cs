@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using GiayPoly.DBcontext;
 using GiayPoly.Models;
+using GiayPoly.Services;
 using GiayPoly.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -11,103 +12,76 @@ namespace GiayPoly.Controllers
     [ApiController]
     public class OderController : ControllerBase
     {
-
-        private readonly DbWebContext _context;
-        private readonly IMapper _mapper;
-        public OderController(DbWebContext context, IMapper mapper)
+        private readonly IOrderService  _orderService;
+        public OderController( IOrderService orderService)
         {
-            _context = context;
-            _mapper = mapper;
+            _orderService = orderService;
         }
         [HttpGet]
         [Route("GetList")]
         public async Task<IActionResult> GetList(string? search)
         {
-            if (search != null)
+           var orders = await _orderService.GetAllAsync();
+            if (orders != null)
             {
-
+                return Ok(orders);
             }
-            var listOder = await _context.Oders.ToListAsync();
-            if (listOder != null)
-            {
-                return Ok(listOder);
-            }
-            else { return Ok(null); }
+            else { return BadRequest(null); }
         }
         [HttpGet]
         [Route("GetById")]
         public async Task<IActionResult> GetById(Guid id)
         {
-
-            var oder = await _context.Oders.FirstOrDefaultAsync(x => x.Id == id);
+            var oder = await  _orderService.GetByIdAsync(id);
             if (oder != null)
             {
                 return Ok(oder);
             }
-            else { return Ok(null); }
+            else { return BadRequest(null); }
         }
         [HttpGet]
         [Route("GetByEmail")]
         public async Task<IActionResult> GetById(string email)
         {
-
-            var oder = await _context.Oders.Where(x => x.Email == email).ToListAsync();
+            var oder = await _orderService.GetByEmailAsync(email);
             if (oder != null)
             {
                 return Ok(oder);
             }
-            else { return Ok(null); }
+            else { return BadRequest(null); }
         }
         [HttpPut]
         [Route("Update")]
         public async Task<IActionResult> Update(Guid id, OderView input)
         {
-            var oder = await _context.Oders.FirstOrDefaultAsync(x => x.Id == id);
-            if (oder != null)
+            var result = await _orderService.UpdateAsync(id, input);
+            if (result)
             {
-                _mapper.Map(input,oder);
-                _context.Update(oder);
-                await _context.SaveChangesAsync();
-                return Ok(oder);
+                return Ok(input);
             }
-            else { return Ok(null); }
+            else { return BadRequest(null); }
         }
         [HttpDelete]
         [Route("Delete")]
         public async Task<IActionResult> Delete(Guid id)
         {
-            var product = await _context.Oders.FirstOrDefaultAsync(x => x.Id == id);
-            if (product != null)
+            var result = await _orderService.DeleteAsync(id);
+            if (result)
             {
-                _context.Remove(product);
-                await _context.SaveChangesAsync();
-                return Ok(id);
+                return Ok();
             }
-            else { return Ok(null); }
+            else { return BadRequest(null); }
         }
         [HttpPost]
         [Route("Create")]
         public async Task<Oder> Create(Oder input)
         {
-            if (input == null)
+            var result = await _orderService.CreateAsync(input);
+            if (result != null)
             {
-                return null;
+                return result;
             }
-            if(input.VoucherCode != "")
-            {
-                var voucher = await _context.Vouchers.FirstOrDefaultAsync(x => x.Code == input.VoucherCode);
-                if(voucher.TurnUseVoucher >0) voucher.TurnUseVoucher -= 1;
-                _context.Update(voucher);             
-            }
-            var user = await _context.Accounts.FirstOrDefaultAsync(x => x.Email == input.UserName);
-            input.PhoneNumber = user.PhoneNumber;
-            input.UserName = user.UserName;
-            input.Email = user.Email;
-            input.DayOder = DateTime.UtcNow.Date.ToString("dd/MM/yyyy HH:mm");
-            _context.Oders.Add(input);
-            await _context.SaveChangesAsync();
-
-            return input;
+            return null;
         }
     }
 }

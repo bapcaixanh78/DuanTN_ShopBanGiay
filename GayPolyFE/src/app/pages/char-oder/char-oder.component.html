@@ -1,0 +1,19 @@
+
+<div class="fm" style="display: flex;">
+  <div class="fm-name blue-color">
+   Chọn Năm<span class="fm-name-redstar"> </span>
+  </div>
+  <div class="fm-input" >
+    <select  style="width: 90px; margin-left: 5px;" name="fm-company" id="fm-company" formControlName="Type" (change)="changyear($event)">
+      <option value="{{i}}" *ngFor="let i of listYear"  >
+        {{i}}
+      </option>
+      <option value='2015'  >
+       sadasd
+      </option>
+    </select>
+  </div>
+</div>
+<div style="height: 800px; width: 1000px;"> 
+  <canvas id="myChart"></canvas>
+</div>

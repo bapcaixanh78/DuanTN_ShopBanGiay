@@ -1,0 +1,189 @@
+<div class="header">
+  <header>
+    <div class="header-navbar">
+      <a href="index.html">Giay Poly</a>
+      <nav class="header-nav">
+        <ul class="header-list">
+          <li class="header-list--item">
+            <a routerLink="/fullpage">Trang Chủ</a>
+          </li>
+          <li class="header-list--item">
+            <a routerLink="/infor">Thời Trang</a>
+          </li>
+          <li class="header-list--item">
+            <a routerLink="/detail">Tin Tức</a>
+          </li>
+          <li class="header-list--item">
+            <a href="/fullpage/#contact">Về Chúng Tôi</a>
+          </li>
+          <li class="header-list--item">
+            <a href="/fullpage/#contact">Liên Hệ </a>
+          </li>
+          <li class="header-list--item">
+            <a routerLink="/fullpage/#contact">Kết Nối </a>
+          </li>
+        </ul>
+      </nav>
+      <div (click)="linkCart()" class="seach">
+        <!-- <form [formGroup]="seachForm" (ngSubmit)="onSeach()">
+            <input id="seach-input" type="text" formControlName="name" />
+          </form> -->
+        <!-- Button trigger modal -->
+        <a type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">
+          <span style="display: flex;"><img src="./assets/image/Screenshot 2022-05-21 001617.png" alt="" />
+            <div  *ngIf="countCart > 0"  style="background: red;" class="soluongsanpham">
+              <p >{{countCart}}</p>
+            </div>
+          </span>
+        </a>
+      </div>
+    </div>
+  </header>
+</div>
+<section class="section-space">
+  <div class="container">
+    <div class="row product-details">
+      <div class="col-lg-6">
+        <div class="img-banner">
+          <img style="border: 1px solid gray;"
+          src="{{this.imgSrc}}" 
+            width="500px" height="400px" alt="">
+        </div>
+        <div class="img-galery">
+          <img (click)="clickUrl(productByID.image)"  style="border: 1px solid gray;"
+            src="{{host}}/media/{{productByID.imgSlug}}/{{productByID.image}}"
+            width="120px" height="120px" alt="">
+            <ng-container  *ngFor="let item of galery">
+              <img (click)="clickUrl(item)" style="border: 1px solid gray;"
+              *ngIf="item !=''" src="{{host}}/media/product/{{item}}" alt=""  alt="" 
+                  width="120px" height="120px" alt="">
+            </ng-container>
+
+        </div>
+      </div>
+      <div class="col-lg-6 mt-2 mt-lg-0">
+        <div class="product-details-content product-item">
+
+          <div class="product-details-title" style="font-size: 20px;"> <strong>{{productByID.name}}</strong>
+          </div>
+          <div class="justify-content-between align-items-center mb-2" style="margin-top: 10px;">
+            <div class="product-details-collection mb-0"><span style="font-weight: 500; margin-top: 10px;">Loại Giày
+                :</span>{{productByID.type}}</div>
+            <div class="product-details-review mt-2 mt-lg-0">
+              <div class="product-review-icon">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-half-o"></i>
+              </div>
+              <!-- <span type="button" class="product-review-show">Đánh Giá 5 Sao</span> -->
+            </div>
+          </div>
+          <div class="hohoda-row row">
+            <div class="col-12 amounth">
+              <div class="">
+                <span style="font-weight: 500;">Tình Trạng : </span> Còn {{productByID.quantity}} Sản Phẩm
+              </div>
+            </div>
+            <div class="col-12 prices">
+              <div style="font-weight: 500; font-size: 18px;margin-top: 10px;" class="hohoda-price">
+                {{productByID.price}} VNĐ
+              </div>
+            </div>
+          </div>
+          <div class="mb-7" style="margin-top: 10px;">
+            <p><strong>Mô tả</strong>
+              {{productByID.description}}
+            </p>
+          </div>
+          <div class="" >
+            <div class="size-options" >          
+              Chọn Size Giày
+            </div>
+            <div style="display: flex;" class="col-12 ">
+              <ng-container *ngFor="let item of productDetails">
+              <div class="size" style="cursor: pointer;" (click)="setBtn(item)">
+               {{item.sizeName}}
+              </div>
+            </ng-container>
+            </div>
+
+          </div>
+          <span style="padding-top: 10px; display: block;"> Size {{optionQatity.sizeName}} Còn {{optionQatity.quantity}} Sản Phẩm</span>
+          <div class="product-details-qty-list">
+          </div>
+          <div class="product-details-pro-qty hohoda-row ">
+            <!-- <input type="hidden" id="csrf-token"
+              value="iXUmBtWzdHdOxyTV36JAKMXwPxdV4wS50vmJhCk6aeoW5s1YWBaD6JEYKEkf7V46tc3LVb4P3UOPrntMUoovheGHDwMe1XrYutntj--rMJU1:sJPMgCt3h0R3S9S1oCsK5WAjCABg3RZbh29aJ4mLgBBSY1Ccd7R5BMVZEPRnHLtf7TCt3kyyJs9NKmuWI-rZLR5x73M_1PDMLJGoDp0Whzo1">
+            <div class="pro-qty" style="padding-top: 20px; display: flex;">
+              <input name="quantity" type="text" title="Quantity" value="1">
+              <div style="cursor: pointer;" class="inc qty-btn size">+</div>
+              <div style="cursor: pointer;" class="dec qty-btn size">-</div>
+
+            </div> -->
+
+            <div>
+              <button type="button" class="btn btn-primary btn-hn"
+                (click)="addcart(productByID.id)">
+                Thêm vào giỏ
+              </button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section>
+  <div class="container">
+    <h2>Nhập bình luận</h2>
+    <form (ngSubmit)="submitForm()" #commentForm="ngForm">
+      <!-- <div class="form-group">
+        <label for="name">Your Name:</label>
+        <input type="text" id="name" name="name" required [(ngModel)]="formData.name">
+      </div>
+      <div class="form-group">
+        <label for="email">Your Email:</label>
+        <input type="email" id="email" name="email" required [(ngModel)]="formData.email">
+      </div> -->
+      <div class="form-group">
+        <label for="comment">Nội dung bình luận</label>
+        <textarea id="comment" name="comment" required [(ngModel)]="formData.comment"></textarea>
+      </div>
+      <div class="form-group">
+        <input type="submit" value="Bình luận" [disabled]="!commentForm.valid">
+      </div>
+    </form>
+    <div class="comment-list">
+      <!-- <h2>Comments</h2> -->
+      <div *ngIf="commentGet.length > 0; else noComments">
+        <div *ngFor="let comment of commentGet.slice(0, 2)" class="comment-item">
+          <p><strong>Được tạo bởi:</strong> {{ comment.createdBy }}</p>
+          <p><strong>Nội dung bình luận:</strong> {{ comment.content }}</p>
+          <p><strong>Ngày tạo:</strong> {{ comment.createdAt | date }}</p>
+        </div>
+      </div>
+      <ng-template #noComments>
+        <p>No comments available.</p>
+      </ng-template>
+    </div>
+    
+  </div>
+  
+</section>
+
+<section class="footer" id="footer">
+  <div class="container-lienhe">
+    <p style="margin-top: 30px">Giay PoLy</p>
+    <!-- <div class="hiden">
+          <a href="" class="" style="color: white">aaaaaa</a>
+        </div> -->
+    <img src="./assets/image/footer.jpg" alt="" /> alt="">
+    <div class="logodangky">
+      <img src="./assets/image/dangky.jpg" alt="" />
+    </div>
+  </div>
+</section>

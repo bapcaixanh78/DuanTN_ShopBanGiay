@@ -3,14 +3,7 @@
   <div class="header">
     <div class="header__container">
       <div class="header__left">
-        <div class="header__left--input">
-          <input type="text" [(ngModel)]="search" (ngModelChange)="onSearch(search)"
-            (keypress)="onKeyPress($event, search)" matInput [matAutocomplete]="auto" #trigger="matAutocompleteTrigger"
-            (keydown.enter)="trigger.closePanel()" />
-          <div class="header__left--icon">
-            <i class="bx bx-search"></i>
-          </div>
-        </div>
+       
         <mat-autocomplete #auto="matAutocomplete" showPanel>
           <mat-option *ngFor="let item of suggestion" [value]="item">
             {{ item }}
@@ -35,6 +28,12 @@
   <div class="container">
     <div class="slider-bar">
       <ul>
+        <li  (click)="changeTable(6)" class="slider-bar-li">
+          Danh Mục Sản Phẩm
+        </li>
+        <li  (click)="changeTable(8)" class="slider-bar-li">
+          Quản lý mở rộng Sản Phẩm
+        </li>
         <li  (click)="changeTable(1)" class="slider-bar-li">
           Quản Lý Sản Phẩm
         </li>
@@ -50,10 +49,44 @@
       <li (click)="changeTable(5)"  class="slider-bar-li"> 
         Thống Kê 
       </li>
+      <li (click)="changeTable(7)"  class="slider-bar-li"> 
+        Thống Kê Doanh Thu
+      </li>
+      <li (click)="changeTable(9)"  class="slider-bar-li">   
+        Đánh Giá Khách Hàng
+      </li>
       </ul>
 
     </div>
     <div *ngIf="codeTable == 1" class="container-table">
+      <div class="search-container"  style="display: flex; margin-bottom: 5px;">
+        <input type="text" [(ngModel)]="searchName" id="searchInput" placeholder="Search for products...">
+        <select  [(ngModel)]="searchSelect" id="priceRange">
+          <option value="1">Lọc Giá Từ Thấp Đến Cao </option>
+          <option value="2">Lọc Giá Từ Cao Đến Thấp </option>
+        </select>
+        <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle btn-hn"   type="button" id="dropdownMenuButton1"
+            data-bs-toggle="dropdown" aria-expanded="false">
+            Lọc Theo Khoảng Giá
+          </button>
+          <ul class="dropdown-menu " aria-labelledby="dropdownMenuButton1">
+            <div class="range-container">
+              <span id="output">0</span>
+              <input type="range" min="0" max="2000000"  (change)="changeValue($event)" [(ngModel)]="rangValue" id="priceRange">
+              <span id="output">2000000</span>
+             
+            </div>
+            Giá lọc {{rangValue}}
+          </ul>
+        </div>
+        <button class="btn btn-secondary btn-hn" type="button" (click)="serachFilter()" >
+          Lọc
+      </button>
+      <button class="btn btn-secondary btn-hn" type="button" (click)="reset()" >
+        reset
+    </button>
+      </div>
       <table  class="dashboard__table">
         <thead class="dashboard__table--col">
           <th class="dashboard__table--col--item">
@@ -66,11 +99,11 @@
           </th>
           <th class="dashboard__table--col--item3">Hình Ảnh</th>
           <th class="dashboard__table--col--item3">Giá Sản Phẩm</th>
-          <th class="dashboard__table--col--item3">Số Lượng</th>
+          <!-- <th class="dashboard__table--col--item3">Số Lượng</th> -->
           <th class="dashboard__table--col--item3">Kiểu Giày</th>
-          <th class="dashboard__table--col--item3">Mô tả</th>
+          <th style="width: 100px;" class="dashboard__table--col--item3">Mô tả</th>
           <th class="dashboard__table--col--item3">Sale</th>
-          <th class="dashboard__table--col--item3">VoucherCode</th>
+          <!-- <th class="dashboard__table--col--item3">Xem Chi Tiết</th> -->
         </thead>
         <tbody>
           <tr *ngFor="let item of data | paginate: config" (dblclick)="onRowClick(item.id)">
@@ -89,11 +122,15 @@
               <img src="{{host}}/media/{{item.imgSlug}}/{{item.image}}" alt="" width="50" height="50">
             </td>
             <td>{{ item.price }}</td>
-            <td>{{ item.quantity }}</td>
+            <!-- <td>{{ item.quantity }}</td> -->
             <td>{{item.type}}</td>
-            <td>{{ item.description }}</td>
+            <td style="width: 100px;" >
+              <span  style="width: 100px; display: block;" class="ellipsis "> {{ item.description }}</span>
+             
+            </td>
             <td>{{ item.sale}}</td>
-            <td>{{ item.voucherCode}}</td>
+            <!-- <td>{{ item.voucherCode}}</td> -->
+            <!-- <td (click)="GetDetail(item.id)"><i class="fa-solid fa-eye"></i></td> -->
           </tr>
         </tbody>
         
@@ -112,6 +149,12 @@
     <div *ngIf="codeTable == 4" class="container-table">
      <app-account></app-account>
     </div>
+    <div *ngIf="codeTable ==8" class="container-table">
+      <app-product-details></app-product-details>
+     </div>
+     <div *ngIf="codeTable ==9" class="container-table" >
+      <app-review></app-review>
+     </div>
     <div *ngIf="codeTable == 5" class="container-table">
       <table  class="dashboard__table">
         <thead class="dashboard__table--col">
@@ -150,6 +193,12 @@
 
       </table>
 
+    </div>
+    <div *ngIf="codeTable == 6" class="container-table">
+      <app-category></app-category>
+    </div>
+    <div *ngIf="codeTable == 7" class="container-table">
+      <app-char-oder></app-char-oder>
     </div>
   </div>
 
